@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: books
+
+greeting:
+  message: Hello
+
+info:
+  contact:
+    phone: 123-123-1234
+    fax: 321-321-3210
+  email: support@myapp.com
+
+management:
+  endpoints:
+    web:
+      exposure:
+        exclude: mappings
+        include: '*'
+  info:
+    git:
+      mode: full
+
+  endpoint:
+    health:
+      show-details: always
+
+---
+spring:
+  profiles: prod
+  
+greeting:
+  message: Hello from production!
+  
+---
+spring:
+  profiles: cloud
+  
+greeting:
+  message: Hello from the cloud!
+  

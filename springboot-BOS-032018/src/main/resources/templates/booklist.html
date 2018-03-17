@@ -1,0 +1,19 @@
+<html>
+
+  <head>
+  	<title>All books</title>
+  	<link rel="stylesheet" href="/styles.css"></link>
+  </head>
+  
+  <body>
+    <h1 th:text="${greeting}">[[BOOKS TITLE]]</h1>
+    <p>Here are some books!!!</p>
+    <h3>HEY, check them out!!!!!!!!!!!!!!</h3>
+    <ul>
+    	<li th:each="book : ${books}">
+    	<span th:text="${book.title}">[[BOOK TITLE]]</span> - <span th:text="${book.author}">[[BOOK AUTHOR]]</span>
+    	</li>
+    </ul>
+  </body>
+
+</html>
