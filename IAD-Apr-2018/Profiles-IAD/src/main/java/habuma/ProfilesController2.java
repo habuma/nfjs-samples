@@ -12,7 +12,7 @@ public class ProfilesController2 {
 
 	private final ProfileRepository repo;
 	
-	@GetMapping
+	@GetMapping("/x")
 	public String profiles(Model model) {
 		Iterable<Profile> all = repo.findAll();
 		model.addAttribute("profiles", all);

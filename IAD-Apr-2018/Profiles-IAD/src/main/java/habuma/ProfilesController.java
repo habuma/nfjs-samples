@@ -12,10 +12,11 @@ import lombok.RequiredArgsConstructor;
 public class ProfilesController {
 
 	private final ProfileRepository repo;
+	private final GreetingProps greetingProps;
 	
 	@GetMapping("/hello")
 	public String hello() {
-		return "Hello Reston!";
+		return greetingProps.getMessage();
 	}
 	
 	@GetMapping

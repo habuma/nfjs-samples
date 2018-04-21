@@ -47,7 +47,6 @@
 		<dependency>
 			<groupId>org.projectlombok</groupId>
 			<artifactId>lombok</artifactId>
-			<scope>compileOnly</scope>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -57,6 +56,11 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+		</dependency>
 	</dependencies>
 
 	<build>
@@ -64,6 +68,17 @@
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
+				<executions>
+				  <execution>
+				    <goals>
+				      <goal>build-info</goal>
+				    </goals>
+				  </execution>
+				</executions>
+			</plugin>
+			<plugin>
+			  <groupId>pl.project13.maven</groupId>
+			  <artifactId>git-commit-id-plugin</artifactId>
 			</plugin>
 		</plugins>
 	</build>

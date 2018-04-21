@@ -2,9 +2,35 @@ spring:
   application:
     name: profiles
 
+
 management:
   endpoints:
     web:
       exposure:
         include: '*'
+  info:
+    git:
+      mode: full
+      
+  endpoint:
+    health:
+      show-details: always
         
+info:
+  contact:
+    phone: 123-123-1234
+    email: support@helpme.com
+  fax: 321-321-3210
+  
+greeting:
+  message: Hello there
+  
+---
+spring:
+  profiles: production
+  
+  datasource:
+    url: fjdfkhjds
+    username: fhdsjkfds
+    password: fhdsjkfhdsj
+  
