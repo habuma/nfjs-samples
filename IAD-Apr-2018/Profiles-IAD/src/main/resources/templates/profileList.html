@@ -1,0 +1,15 @@
+<html>
+  <head>
+    <title>Profiles</title>
+  </head>
+  
+  <body>
+  
+    <ul>
+      <li th:each="profile : ${profiles}"><span th:text="${profile.firstName}">FN</span> 
+          <span th:text="${profile.lastName}">FN</span></li>
+    </ul>
+  
+  </body>
+  
+</html>
