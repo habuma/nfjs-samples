@@ -24,13 +24,5 @@ info:
   
 greeting:
   message: Hello there
-  
----
-spring:
-  profiles: production
-  
-  datasource:
-    url: fjdfkhjds
-    username: fhdsjkfds
-    password: fhdsjkfhdsj
+
   
