@@ -8,13 +8,13 @@ import org.springframework.context.annotation.Configuration;
 public class DataLoaderConfig {
 
 	@Bean
-	public CommandLineRunner dataLoader(ProfileRepository repo) {
+	public CommandLineRunner dataLoader(UserProfileRepository repo) {
 		
 		return args -> {
-			repo.save(new Profile("habuma", "Craig", "Walls"));
-			repo.save(new Profile("ken", "Ken", "Kousen"));
-			repo.save(new Profile("sipe", "Ken", "Sipe"));
-			repo.save(new Profile("nate", "Nate", "Schutta"));
+			repo.save(new UserProfile("habuma", "Craig", "Walls", "Spring"));
+			repo.save(new UserProfile("ken", "Ken", "Kousen", "Groovy"));
+			repo.save(new UserProfile("sipe", "Ken", "Sipe", "Security"));
+			repo.save(new UserProfile("nate", "Nate", "Schutta", "JavaScript"));
 		};
 		
 	}

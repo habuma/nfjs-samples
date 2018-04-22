@@ -10,11 +10,11 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ProfilesController2 {
 
-	private final ProfileRepository repo;
+	private final UserProfileRepository repo;
 	
 	@GetMapping("/x")
 	public String profiles(Model model) {
-		Iterable<Profile> all = repo.findAll();
+		Iterable<UserProfile> all = repo.findAll();
 		model.addAttribute("profiles", all);
 		return "profileList";
 	}
