@@ -6,6 +6,11 @@ spring:
     show-sql: true
 
 
+logging:
+  level:
+    org.springframework.security: debug
+
+
 management:
   endpoints:
     web:

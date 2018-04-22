@@ -11,10 +11,10 @@ public class DataLoaderConfig {
 	public CommandLineRunner dataLoader(UserProfileRepository repo) {
 		
 		return args -> {
-			repo.save(new UserProfile("habuma", "Craig", "Walls", "Spring"));
-			repo.save(new UserProfile("ken", "Ken", "Kousen", "Groovy"));
-			repo.save(new UserProfile("sipe", "Ken", "Sipe", "Security"));
-			repo.save(new UserProfile("nate", "Nate", "Schutta", "JavaScript"));
+			repo.save(new UserProfile("habuma", "password", "Craig", "Walls", "Spring"));
+			repo.save(new UserProfile("ken", "password", "Ken", "Kousen", "Groovy"));
+			repo.save(new UserProfile("sipe", "password", "Ken", "Sipe", "Security"));
+			repo.save(new UserProfile("nate", "password", "Nate", "Schutta", "JavaScript"));
 		};
 		
 	}
