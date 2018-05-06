@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>User Profile</title>
+  </head>
+  
+  <body>
+    <h2><span th:text="${profile.firstName}"></span> <span th:text="${profile.lastName}"></span></h2>
+    
+    <p>Username: <span th:text="${profile.username}"></span></p>
+    <p>Password: <span th:text="${profile.password}"></span></p>
+  </body>
+</html>

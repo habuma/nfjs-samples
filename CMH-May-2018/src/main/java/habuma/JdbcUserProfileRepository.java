@@ -13,6 +13,18 @@ public class JdbcUserProfileRepository
 	private final JdbcTemplate jdbc;
 
 	@Override
+	public UserProfile findByUsername(String username) {
+		return jdbc.query("select username, password, firstName, lastName "
+				+ "from UserProfiles where username=?",
+				(rs, rowNum) -> {
+					return new UserProfile(rs.getString("username"), 
+							rs.getString("password"), 
+							rs.getString("firstName"),
+							rs.getString("lastName"));
+				}, username).get(0);
+	}
+	
+	@Override
 	public Iterable<UserProfile> findAll() {
 		return jdbc.query("select username, password, firstName, lastName "
 				+ "from UserProfiles", 
