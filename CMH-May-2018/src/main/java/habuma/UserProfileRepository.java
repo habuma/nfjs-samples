@@ -1,12 +1,18 @@
 package habuma;
 
-public interface UserProfileRepository {
+import org.springframework.data.jpa.repository.Query;
+import org.springframework.data.repository.CrudRepository;
 
-	Iterable<UserProfile> findAll();
+public interface UserProfileRepository 
+		extends CrudRepository<UserProfile, Long>,
+				UserProfileRepositoryExtras {
 	
-	UserProfile findByUsername(String username);
+	UserProfile findByUsername(String un);
+	int countByUsername(String un);	
+	Iterable<UserProfile> findByLastName(String ln);
 	
-	UserProfile save(UserProfile up);
-	
+	@Query("from UserProfile p "
+		  +"where p.username='habuma'")
+	UserProfile findCraig();
 	
 }

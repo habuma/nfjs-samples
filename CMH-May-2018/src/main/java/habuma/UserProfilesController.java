@@ -15,6 +15,15 @@ public class UserProfilesController {
 
 	private final UserProfileRepository repo;
 	
+	@GetMapping("/craig")
+	public String craig(Model model) {
+		model.addAttribute("profile", repo.findCraig());
+		
+		repo.doSomethingStupid();
+		
+		return "profile";
+	}
+	
 	@GetMapping("/{username}")
 	public String byUsername(
 			@PathVariable("username") String username,
