@@ -1,0 +1,28 @@
+greeting:
+  message: Hiya
+  count: 5
+ 
+management:
+  endpoint:
+    health:
+      show-details: always
+  
+info:
+  support:
+    phone: 123-123-1234
+    email: support@myapp.com
+  fax: 321-321-3210
+---
+spring:
+  profiles: production
+  
+greeting:
+  message: Hello production
+  count: 7
+  
+---
+spring:
+  profiles: cloud
+  
+greeting:
+  message: Hello cloud
