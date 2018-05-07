@@ -2,6 +2,8 @@ package habuma;
 
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -18,24 +20,15 @@ public class UserProfilesController {
 
 	private final UserProfileRepository repo;
 	
-	@GetMapping("/craig")
-	public String craig(Model model) {
-		model.addAttribute("profile", repo.findCraig());
-		
-		repo.doSomethingStupid();
-		
-		return "profile";
-	}
-	
-	@GetMapping("/{username}")
-	public String byUsername(
-			@PathVariable("username") String username,
-			Model model) {
+	@GetMapping("/me")
+	public String byUsername(@AuthenticationPrincipal UserProfile user, Model model) {
+		String username = user.getUsername();	
 		model.addAttribute("profile", repo.findByUsername(username));
 		return "profile";
 	}
 	
 	@GetMapping
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	public String all(Model model) {
 		model.addAttribute("profiles", repo.findAll());
 		return "profileList";
