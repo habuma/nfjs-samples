@@ -1,8 +1,10 @@
 package habuma;
 
 
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import lombok.AccessLevel;
 import lombok.Data;
@@ -10,13 +12,14 @@ import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 
 @Data
-@Document
+@Entity
 @NoArgsConstructor(force=true, access=AccessLevel.PRIVATE)
 @RequiredArgsConstructor
 public class UserProfile {
 
 	@Id
-	private String id;
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	private Long id;
 	
 	private final String username;
 	private final String password;

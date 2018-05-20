@@ -17,7 +17,7 @@ public class DataLoader implements CommandLineRunner {
 		repo.save(new UserProfile("hinojosa", "password", "Daniel", "Hinojosa"));
 		repo.save(new UserProfile("venkats", "password", "Venkat", "Subramaniam"));
 		repo.save(new UserProfile("ken", "password", "Ken", "Kousen"));
-		repo.save(new UserProfile("ken", "password", "Ken", "Sipe"));
+		repo.save(new UserProfile("sipe", "password", "Ken", "Sipe"));
 	}
 	
 }

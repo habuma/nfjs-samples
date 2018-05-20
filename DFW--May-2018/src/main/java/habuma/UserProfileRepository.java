@@ -1,17 +1,22 @@
 package habuma;
 
-import org.springframework.data.mongodb.repository.Query;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.data.repository.query.QueryByExampleExecutor;
 
 public interface UserProfileRepository 
 		extends CrudRepository<UserProfile, Long>, 
-				UserProfileExtras {
+				UserProfileExtras,
+				QueryByExampleExecutor<UserProfile> {
 	
 	Iterable<UserProfile> findByFirstName(String fn);
 	
-	UserProfile findByUsername(String un);
+	UserProfile findByUsername(@Param("username") String un);
+
+	SimpleUserProfile findSimpleByUsername(String un);
 	
-	@Query("{'firstName':'Ken'}")
+	@Query("from UserProfile p where p.firstName = 'Ken'")
 	Iterable<UserProfile> findAllTheKens();
 	
 	// Won't work!!!
