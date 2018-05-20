@@ -1,3 +1,5 @@
+
+
 management:
   endpoints:
     web:
@@ -19,3 +21,11 @@ info:
   
   
 spring.boot.admin.client.url: http://localhost:9090
+
+---
+spring:
+  profiles: production
+  datasource:
+    url: fhjdskfhjdskhfjkds // bogus
+    username: fhdjfkds
+    password: fhjdksfhjkd

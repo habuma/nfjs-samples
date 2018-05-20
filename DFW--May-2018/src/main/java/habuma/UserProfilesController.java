@@ -20,11 +20,15 @@ public class UserProfilesController {
 	
 	@GetMapping
 	public Iterable<UserProfile> allUser() {
-		
 		mr.counter("HIYA", "A", "B").increment(150);
-		
 		log.debug("LOGGING STUFF");
 		return repo.findAll();
+	}
+	
+	@GetMapping("/kens")
+	public Iterable<UserProfile> byFirstName() {
+		repo.doSomethingStupid();
+		return repo.findAllTheKens();
 	}
 	
 	
