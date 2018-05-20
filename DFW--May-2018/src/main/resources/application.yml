@@ -3,3 +3,19 @@ management:
     web:
       exposure:
         include: '*'
+  info:
+    git:
+      mode: full
+      
+  endpoint:
+    health:
+      show-details: always
+        
+info:
+  contact:
+    phone: 123-123-1234
+    email: support@example.com
+  project-name: User Profiles
+  
+  
+spring.boot.admin.client.url: http://localhost:9090
