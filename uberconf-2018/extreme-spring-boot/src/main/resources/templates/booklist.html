@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" 
+      xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <title>Title</title>
+  </head>
+  
+  <body>
+    
+    <h2>Hey yo, check out these books</h2>
+    
+    <ul>
+    		<li th:each="book : ${books}">
+    			<b><span th:text="${book.title}"></span></b> by 
+    			<span th:text="${book.author}"></span>
+    		</li>
+    </ul>
+    
+  </body>
+</html>
