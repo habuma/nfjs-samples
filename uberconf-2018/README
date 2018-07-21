@@ -1,0 +1,13 @@
+These are the samples built during my sessions at UberConf 2018.
+
+ - Essential Spring Boot
+ - Extreme Spring Boot
+ - Essential Spring Data
+ - Extreme Spring Boot
+ - Essential Spring Security
+ - Cloud-Native Spring: Configuration and Discovery
+ - Cloud-Native Spring: Tracing and Health
+ - Cloud-Native Spring: Streams and Tasks
+
+The sample code used and demonstrated during the Spring Skills
+session can be found at https://github.com/habuma/spring-skills.

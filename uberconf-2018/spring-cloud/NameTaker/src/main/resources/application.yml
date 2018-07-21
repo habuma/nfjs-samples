@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        output:
+          destination: names
+          content-type: text/plain

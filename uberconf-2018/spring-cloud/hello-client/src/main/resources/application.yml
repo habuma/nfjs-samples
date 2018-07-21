@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: hello-client
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
