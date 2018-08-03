@@ -1,0 +1,43 @@
+server:
+  port: ${foo:8080}
+
+greeting:
+  message: Hello Y'All!
+
+info:
+  contact:
+    phone: 123-123-1234
+    email: support@example.com
+  fax: 321-321-3210
+  
+management:
+  info:
+    git:
+      mode: full
+
+  endpoint:
+    health:
+      show-details: always
+      
+      
+
+---
+spring:
+  profiles: prod
+  
+greeting:
+  message: Hello my friends!
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  
+---
+spring:
+  profiles: otherprofile
+
+server:
+  port: 9876
+  
