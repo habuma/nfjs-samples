@@ -17,7 +17,7 @@ public class BooksController {
 	
 	@GetMapping
 	public Iterable<Book> allBooks() {
-		log.debug("GETTING ALL BOOKS");
+		log.debug("Getting all books");
 		return repo.findAll();
 	}
 	
