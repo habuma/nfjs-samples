@@ -15,11 +15,11 @@ public class SeaProfilesApplication {
 	@Bean
 	public CommandLineRunner dataLoader(ProfileRepository repo) {
 		return args -> {
-			repo.save(new Profile("habuma", "Craig", "Walls"));
-			repo.save(new Profile("schutta", "Nate", "Schutta"));
-			repo.save(new Profile("kousen", "Ken", "Kousen"));
-			repo.save(new Profile("sletten", "Brian", "Sletten"));
-			repo.save(new Profile("johnson", "Jonathan", "Johnson"));
+			repo.save(new Profile("habuma", "password", "Craig", "Walls"));
+			repo.save(new Profile("schutta", "password", "Nate", "Schutta"));
+			repo.save(new Profile("kousen", "password", "Ken", "Kousen"));
+			repo.save(new Profile("sletten", "password", "Brian", "Sletten"));
+			repo.save(new Profile("johnson", "password", "Jonathan", "Johnson"));
 		};
 	}
 }
