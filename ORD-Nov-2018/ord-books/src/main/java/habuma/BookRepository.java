@@ -1,8 +1,17 @@
 package habuma;
 
-public interface BookRepository {
+import org.springframework.data.mongodb.repository.Query;
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.data.repository.query.Param;
 
-	Book save(Book b);
-	Iterable<Book> findAll();
+public interface BookRepository extends 
+	CrudRepository<Book, String>, BookRepoExtras {
+	
+	Book findByIsbn(@Param("abcd") String isbn);
+
+	SimpleBook findSimpleByIsbn(String isbn);
+
+	@Query("{'authorFirstName':'Kendall','authorLastName':'Crolius'}")
+	Iterable<Book> findKendallsBooks();
 	
 }

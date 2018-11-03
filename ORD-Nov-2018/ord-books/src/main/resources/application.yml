@@ -1,9 +1,6 @@
 greeting:
   message: Hello, NFJS!
   
-server:
-  port: 9090
-  
 management:
   endpoints:
     web:
@@ -20,6 +17,9 @@ info:
     email: support@example.com
   fax: 321-321-3210
   
+spring:
+  jpa:
+    show-sql: true
 
   
 ---
