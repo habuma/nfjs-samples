@@ -20,7 +20,6 @@ public class MyInfoContributor implements InfoContributor {
 			.withDetail("time", System.currentTimeMillis())
 			.withDetail("other", other)
 			.withDetails(other)
-			.withDetail("book", new Book("1234567890", "Spring in Action", "Craig Walls"))
 			.build();
 	}
 
