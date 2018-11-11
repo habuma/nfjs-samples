@@ -1,0 +1,13 @@
+{
+"properties": [
+  {
+    "name": "greeting.message",
+    "type": "java.lang.String",
+    "description": "The greeting we wish to convey."
+  },
+  {
+    "name": "greeting.other",
+    "type": "java.lang.String",
+    "description": "A description for 'greeting.other'"
+  }
+]}
