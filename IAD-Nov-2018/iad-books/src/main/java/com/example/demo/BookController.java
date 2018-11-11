@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import io.micrometer.core.instrument.MeterRegistry;
 import lombok.RequiredArgsConstructor;
 
 @RestController
@@ -14,9 +15,11 @@ public class BookController {
 
 	private final BookRepository repo;
 	private final GreetingProps props;
+	private final MeterRegistry meters;
 	
 	@GetMapping("/hi")
 	public String hi() {
+		meters.counter("com.nofluffjuststuff", "A", "B").increment();
 		return props.getMessage();
 	}
 	

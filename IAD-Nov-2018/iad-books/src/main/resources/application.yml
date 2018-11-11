@@ -4,9 +4,34 @@ greeting:
 info:
   contact:
     phone: 123-123-1234
+    email: support@example.com
+  address:
+    street: 123 North Street
+    city: Reston
+    state: VA
   
 management:
   endpoints:
     web:
       exposure:
         include: '*'
+        
+  info:
+    git:
+      mode: full
+      
+  endpoint:
+    health:
+      show-details: always
+  
+---
+spring:
+  profiles: MN
+
+
+info:
+  address:
+    street: 321 South Street
+    city: Minneapolis
+    state: MN
+  
