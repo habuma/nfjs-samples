@@ -1,0 +1,6 @@
+{"properties": [{
+  "name": "greeting.message",
+  "type": "java.lang.String",
+  "default": "none",
+  "description": "The greeting we wish to convey."
+}]}
