@@ -1,0 +1,35 @@
+greeting:
+  message: Hello MSP!
+  
+management:
+  info:
+    git:
+      mode: full
+      
+  endpoint:
+    health:
+      show-details: always
+      
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  
+info:
+  contact:
+    email: support@example.com
+    phone: 123-123-1234
+  fax: 321-321-3211
+  foobar: 'The message is: ${greeting.message}'
+  
+---
+spring:
+  profiles: production
+
+greeting:
+  message: Hello from production!
+  
+---
+spring:
+  profiles: qa
+    
