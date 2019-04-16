@@ -6,6 +6,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import lombok.AccessLevel;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,9 +26,11 @@ public class Book {
 	private final String title;
 	
 	@ManyToOne
+	
 	private final Publisher publisher;
 
 	@ManyToOne
+	@JsonIgnore
 	private final Author author;
 	
 	private final Integer pages;

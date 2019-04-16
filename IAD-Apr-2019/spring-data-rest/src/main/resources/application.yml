@@ -1,3 +1,11 @@
-management:
-  security:
-    enabled: false
+spring:
+  devtools:
+    livereload:
+      enabled: false
+
+  data:
+    rest:
+      base-path: /api
+      
+  jpa:
+    show-sql: true
