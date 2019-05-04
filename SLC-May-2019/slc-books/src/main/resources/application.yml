@@ -1,0 +1,38 @@
+greeting:
+  message: Hello World!
+
+info:
+  contact:
+    phoneNumber: 123-123-1234
+    email: support@example.com
+  git-repo: https://github.com/habuma/nfjs-samples
+  message: ${greeting.message}
+  lsport: ${local.server.port}
+  port: ${server.port:8080}
+
+management:
+  info:
+    git:
+      mode: full
+
+  endpoint:
+    health:
+      show-details: always
+
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+---
+spring:
+  profiles: slc
+  
+greeting:
+  message: Hello SLC!
+  
+---
+spring:
+  profiles: dfw
+  
+greeting:
+  message: Howdy DFW!
