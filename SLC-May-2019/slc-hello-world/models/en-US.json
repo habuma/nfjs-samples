@@ -1,0 +1,30 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "hello salt lake city",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "samples": [
+            "hello",
+            "say hello",
+            "greetings",
+            "hi there"
+          ]
+        }
+      ]
+    }
+  }
+}
