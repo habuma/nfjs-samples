@@ -3,14 +3,33 @@
 
 const Alexa = require('ask-sdk-core');
 
+const PERMISSIONS = ['alexa::profile:given_name:read', 'alexa::profile:email:read'];
 const LaunchRequestHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
-  handle(handlerInput) {
+  async handle(handlerInput) {
+
+    const { requestEnvelope, serviceClientFactory, responseBuilder} = handlerInput;
+
+    try {
+      const client = serviceClientFactory.getUpsServiceClient();
+      const email = await client.getProfileEmail();
+      const givenName = await client.getProfileGivenName();
+      console.log("GOT PROFILE DATA : ", email, givenName);
+    } catch (error) {
+      if (error.name === 'ServiceError' && error.statusCode == 403) {
+        return responseBuilder
+            .speak("Please grant me permission to access your email address and name in the Amazon Alexa app.")
+            .withAskForPermissionsConsentCard(PERMISSIONS)
+            .getResponse();
+      }
+      throw error;
+    }
+
     const speechText = 'Welcome to StarFlyer Travel. Where do you want to go?';
 
-    return handlerInput.responseBuilder
+    return responseBuilder
       .speak(speechText)
       .reprompt(speechText)
       .withSimpleCard('Hello World', speechText)
@@ -37,22 +56,62 @@ const HelloWorldIntentHandler = {
 
 const ScheduleTripIntentHandler = {
   canHandle(handlerInput) {
-    return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-      && handlerInput.requestEnvelope.request.intent.name === 'ScheduleTripIntent';
+    const request = handlerInput.requestEnvelope.request;
+
+    return request.type === 'IntentRequest'
+      && request.intent.name === 'ScheduleTripIntent'
+      && (request.dialogState === 'COMPLETED');
+
   },
   handle(handlerInput) {
     const allSlots = handlerInput.requestEnvelope.request.intent.slots;
-    const destination = allSlots['destination'].value;
+    // const destination = allSlots['destination'].value;
+    const destination = allSlots['destination']
+        .resolutions.resolutionsPerAuthority[0].values[0].value.name;
+
     const departureDate = allSlots['departureDate'].value;
     const returnDate = allSlots['returnDate'].value;
 
-    const speechText = `Okay, I've got you scheduled for a trip to ${destination}` +
-                       ` leaving ${departureDate} and returning ${returnDate}`;
+    const speechText = `Enjoy your trip to ${destination}! Thanks for using StarFlyer Travel.`;
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .withSimpleCard('StarFlyer Travel', speechText)
+      .withShouldEndSession(true)
       .getResponse();
+  },
+};
+
+const ScheduleTripIntentHandler_InProgress = {
+  canHandle(handlerInput) {
+    const request = handlerInput.requestEnvelope.request;
+    return request.type === 'IntentRequest'
+      && request.intent.name === 'ScheduleTripIntent'
+      && (request.dialogState === 'STARTED' || request.dialogState === 'IN_PROGRESS');
+  },
+  handle(handlerInput) {
+    const currentIntent = handlerInput.requestEnvelope.request.intent;
+    const allSlots = currentIntent.slots;
+    const departureString = allSlots['departureDate'].value;
+    const returnString = allSlots['returnDate'].value;
+
+    if (departureString && returnString) {
+      const departureDate = new Date(departureString);
+      const returnDate = new Date(returnString);
+      if (departureDate >= returnDate) {
+        currentIntent.slots['returnDate'].value = null;
+        return handlerInput.responseBuilder
+          .speak("StarFlyer Travel specializes in space travel, \
+              not time travel. Please specify a return date that is \
+              after the departure date.")
+          .addDelegateDirective(currentIntent)
+          .getResponse();
+      }
+    }
+
+    return handlerInput.responseBuilder
+        .addDelegateDirective(currentIntent)
+        .getResponse();
   },
 };
 
@@ -120,9 +179,11 @@ exports.handler = skillBuilder
     LaunchRequestHandler,
     HelloWorldIntentHandler,
     ScheduleTripIntentHandler,
+    ScheduleTripIntentHandler_InProgress,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler
   )
+  .withApiClient(new Alexa.DefaultApiClient())
   .addErrorHandlers(ErrorHandler)
   .lambda();

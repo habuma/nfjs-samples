@@ -36,7 +36,7 @@
           "slots": [
             {
               "name": "destination",
-              "type": "AMAZON.US_CITY"
+              "type": "PLANETS"
             },
             {
               "name": "departureDate",
@@ -48,19 +48,103 @@
             }
           ]
         }
+      ],
+      "types": [
+        {
+          "name": "PLANETS",
+          "values": [
+            {
+              "id": "MERCURY",
+              "name": {
+                "value": "Mercury",
+                "synonyms": [
+                  "the swift planet",
+                  "the one closest to the sun"
+                ]
+              }
+            },
+            {
+              "id": "VENUS",
+              "name": {
+                "value": "Venus"
+              }
+            },
+            {
+              "id": "EARTH",
+              "name": {
+                "value": "Earth",
+                "synonyms": [
+                  "home",
+                  "terra"
+                ]
+              }
+            },
+            {
+              "id": "MARS",
+              "name": {
+                "value": "Mars",
+                "synonyms": [
+                  "the red planet"
+                ]
+              }
+            },
+            {
+              "id": "JUPITER",
+              "name": {
+                "value": "Jupiter",
+                "synonyms": [
+                  "the biggest planet",
+                  "the one with an eye"
+                ]
+              }
+            },
+            {
+              "id": "SATURN",
+              "name": {
+                "value": "Saturn",
+                "synonyms": [
+                  "the one with rings"
+                ]
+              }
+            },
+            {
+              "id": "URANUS",
+              "name": {
+                "value": "Uranus"
+              }
+            },            
+            {
+              "id": "NEPTUNE",
+              "name": {
+                "value": "Neptune"
+              }
+            },            
+            {
+              "id": "PLUTO",
+              "name": {
+                "value": "Pluto",
+                "synonyms": [
+                  "the little one"
+                ]
+              }
+            }
+          ]
+        }
       ]
     },
     "dialog": {
       "intents": [
         {
           "name": "ScheduleTripIntent",
-          "delegationStrategy": "ALWAYS",
-          "confirmationRequired": false,
-          "prompts": {},
+          "delegationStrategy": "SKILL_RESPONSE",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Intent.Confirmation.ScheduleTripIntent"
+          },
           "slots": [
             {
               "name": "destination",
-              "type": "AMAZON.US_CITY",
+              "type": "PLANETS",
               "elicitationRequired": true,
               "prompts": {
                 "elicitation": "Slot.Elicitation.ScheduleTripIntent.Destination"
@@ -72,9 +156,9 @@
                 },
                 {
                   "type": "isNotInSet",
-                  "prompt": "Slot.Validation.ScheduleTripIntent.Destination",
+                  "prompt": "Slot.Validation.ScheduleTripIntent.Destination.Staycation",
                   "values": [
-                    "denver"
+                    "earth"
                   ]
                 }
               ]
@@ -101,6 +185,15 @@
     },
     "prompts": [
       {
+        "id": "Intent.Confirmation.ScheduleTripIntent",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I've got you down for a trip to {destination} leaving {departureDate} and returning {returnDate}. Is that correct?"
+          }
+        ]
+      },
+      {
         "id": "Slot.Validation.ScheduleTripIntent.Destination",
         "variations": [
           {
@@ -110,6 +203,15 @@
           {
             "type": "PlainText",
             "value": "{destination} is not a city we serve. Where else would you like to go?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.ScheduleTripIntent.Destination.Staycation",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Starflyer Travel doesn't handle travel for staycations. Pick another destination."
           }
         ]
       },

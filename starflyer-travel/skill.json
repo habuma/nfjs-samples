@@ -26,6 +26,14 @@
         }
       }
     },
+    "permissions": [
+      {
+        "name": "alexa::profile:given_name:read"
+      },
+      {
+        "name": "alexa::profile:email:read"
+      }
+    ],
     "manifestVersion": "1.0"
   }
 }

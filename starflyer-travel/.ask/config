@@ -6,11 +6,11 @@
       "merge": {},
       "resources": {
         "manifest": {
-          "eTag": "26d5f31c51c2b539ec9c8a2ad968c3df"
+          "eTag": "3978d9a58cdf274a30abad3c08320d45"
         },
         "interactionModel": {
           "en-US": {
-            "eTag": "0b4803cde43f22a655649cd59ea1c6b9"
+            "eTag": "a9dedc9fc46098c184b42b4a2f37dffa"
           }
         },
         "lambda": [
@@ -23,7 +23,7 @@
             "codeUri": "lambda/custom",
             "functionName": "ask-custom-starflyer-travel-default",
             "handler": "index.handler",
-            "revisionId": "a12fdc0b-e629-495c-b100-e501906d1fbb",
+            "revisionId": "74e94359-214e-498c-b2eb-2d2efce8137d",
             "runtime": "nodejs8.10"
           }
         ]
