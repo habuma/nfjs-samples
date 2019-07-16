@@ -1,0 +1,9 @@
+{
+  "skillId": "amzn1.ask.skill.cba8edc5-6c6d-4eac-82ba-8666eadc0273",
+  "locale": "en-US",
+  "type": "text",
+  "userInput": [
+    "open star flyer travel",
+    "hello"
+  ]
+}

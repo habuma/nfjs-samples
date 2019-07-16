@@ -1,0 +1,33 @@
+{
+  "deploy_settings": {
+    "default": {
+      "skill_id": "amzn1.ask.skill.cba8edc5-6c6d-4eac-82ba-8666eadc0273",
+      "was_cloned": false,
+      "merge": {},
+      "resources": {
+        "manifest": {
+          "eTag": "26d5f31c51c2b539ec9c8a2ad968c3df"
+        },
+        "interactionModel": {
+          "en-US": {
+            "eTag": "0b4803cde43f22a655649cd59ea1c6b9"
+          }
+        },
+        "lambda": [
+          {
+            "alexaUsage": [
+              "custom/default"
+            ],
+            "arn": "arn:aws:lambda:us-east-1:494442948374:function:ask-custom-starflyer-travel-default",
+            "awsRegion": "us-east-1",
+            "codeUri": "lambda/custom",
+            "functionName": "ask-custom-starflyer-travel-default",
+            "handler": "index.handler",
+            "revisionId": "a12fdc0b-e629-495c-b100-e501906d1fbb",
+            "runtime": "nodejs8.10"
+          }
+        ]
+      }
+    }
+  }
+}

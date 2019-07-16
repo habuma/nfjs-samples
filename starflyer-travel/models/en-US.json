@@ -1,0 +1,157 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "star flyer travel",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": [
+            "help",
+            "i don't know"
+          ]
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "samples": [
+            "hello"
+          ]
+        },
+        {
+          "name": "ScheduleTripIntent",
+          "samples": [
+            "plan a trip to {destination} leaving {departureDate} and returning {returnDate}",
+            "i want to visit {destination} between {departureDate} and {returnDate}",
+            "plan a trip to {destination}",
+            "schedule a trip leaving {departureDate}",
+            "plan a trip leaving {departureDate} and returning {returnDate}"
+          ],
+          "slots": [
+            {
+              "name": "destination",
+              "type": "AMAZON.US_CITY"
+            },
+            {
+              "name": "departureDate",
+              "type": "AMAZON.DATE"
+            },
+            {
+              "name": "returnDate",
+              "type": "AMAZON.DATE"
+            }
+          ]
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "ScheduleTripIntent",
+          "delegationStrategy": "ALWAYS",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "destination",
+              "type": "AMAZON.US_CITY",
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Slot.Elicitation.ScheduleTripIntent.Destination"
+              },
+              "validations": [
+                {
+                  "type": "hasEntityResolutionMatch",
+                  "prompt": "Slot.Validation.ScheduleTripIntent.Destination"
+                },
+                {
+                  "type": "isNotInSet",
+                  "prompt": "Slot.Validation.ScheduleTripIntent.Destination",
+                  "values": [
+                    "denver"
+                  ]
+                }
+              ]
+            },
+            {
+              "name": "departureDate",
+              "type": "AMAZON.DATE",
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Slot.Elicitation.ScheduleTripIntent.DepartureDate"
+              }
+            },
+            {
+              "name": "returnDate",
+              "type": "AMAZON.DATE",
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Slot.Elicitation.ScheduleTripIntent.ReturnDate"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prompts": [
+      {
+        "id": "Slot.Validation.ScheduleTripIntent.Destination",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "That is not a city we serve. Where else would you like to go?"
+          },
+          {
+            "type": "PlainText",
+            "value": "{destination} is not a city we serve. Where else would you like to go?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Elicitation.ScheduleTripIntent.Destination",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Where do you want to go?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What is your destination?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Elicitation.ScheduleTripIntent.DepartureDate",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "When do you want to leave?"
+          },
+          {
+            "type": "PlainText",
+            "value": "When will your trip begin?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Elicitation.ScheduleTripIntent.ReturnDate",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "When do you want to return?"
+          },
+          {
+            "type": "PlainText",
+            "value": "When do you want to get back home?"
+          }
+        ]
+      }
+    ]
+  }
+}
