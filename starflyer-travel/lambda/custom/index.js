@@ -2,6 +2,7 @@
 /* eslint-disable  no-console */
 
 const Alexa = require('ask-sdk-core');
+const request = require('request');
 
 const PERMISSIONS = ['alexa::profile:given_name:read', 'alexa::profile:email:read'];
 const LaunchRequestHandler = {
@@ -63,24 +64,85 @@ const ScheduleTripIntentHandler = {
       && (request.dialogState === 'COMPLETED');
 
   },
-  handle(handlerInput) {
-    const allSlots = handlerInput.requestEnvelope.request.intent.slots;
-    // const destination = allSlots['destination'].value;
-    const destination = allSlots['destination']
-        .resolutions.resolutionsPerAuthority[0].values[0].value.name;
+  async handle(handlerInput) {
 
-    const departureDate = allSlots['departureDate'].value;
-    const returnDate = allSlots['returnDate'].value;
+    const { requestEnvelope, serviceClientFactory, responseBuilder} = handlerInput;
 
-    const speechText = `Enjoy your trip to ${destination}! Thanks for using StarFlyer Travel.`;
+    try {
+      const client = serviceClientFactory.getUpsServiceClient();
+      const email = await client.getProfileEmail();
+      const givenName = await client.getProfileGivenName();
+      console.log("GOT PROFILE DATA : ", email, givenName);
 
-    return handlerInput.responseBuilder
-      .speak(speechText)
-      .withSimpleCard('StarFlyer Travel', speechText)
-      .withShouldEndSession(true)
-      .getResponse();
+      const allSlots = handlerInput.requestEnvelope.request.intent.slots;
+      // const destination = allSlots['destination'].value;
+      const destination = allSlots['destination']
+          .resolutions.resolutionsPerAuthority[0].values[0].value.name;
+
+      const departureDate = allSlots['departureDate'].value;
+      const returnDate = allSlots['returnDate'].value;
+
+
+      var accessToken = handlerInput.requestEnvelope.context.System.user.accessToken;
+      if (accessToken == undefined) {
+        const speechText = "You must have a skill that is connected to your Google Calendar account. " +
+                "Please use Alexa app to link your Alexa account to Google.";
+
+        return responseBuilder
+            .speak(speechText)
+            .withLinkAccountCard()
+            .getResponse();
+      }
+
+      const summary = `Trip to ${destination}`;
+      const description = `Trip to ${destination} leaving ${departureDate} and returning ${returnDate}. Pack your bags.`
+
+      await addToGoogleCalendar(accessToken, summary, description, departureDate, returnDate);
+      const speechText = `Enjoy your trip to ${destination}, ${givenName}! Thanks for using StarFlyer Travel.`;
+
+      return handlerInput.responseBuilder
+        .speak(speechText)
+        .withSimpleCard('StarFlyer Travel', speechText)
+        .withShouldEndSession(true)
+        .getResponse();
+
+    } catch (error) {
+      if (error.name === 'ServiceError' && error.statusCode == 403) {
+        return responseBuilder
+            .speak("Please grant me permission to access your email address and name in the Amazon Alexa app.")
+            .withAskForPermissionsConsentCard(PERMISSIONS)
+            .getResponse();
+      }
+      throw error;
+    }
   },
 };
+
+function addToGoogleCalendar(token, summary, description, departureDate, returnDate) {
+  return new Promise((resolve, reject) => {
+    const payload = {
+      summary: summary,
+      description: description,
+      "end": { date: returnDate },
+      start: { date: departureDate }
+    };
+
+    request(
+      {
+        method: 'POST',
+        uri: 'https://www.googleapis.com/calendar/v3/calendars/primary/events',
+        headers: {
+          'Accept': 'application/json',
+          'Content-type': 'application/json',
+          'Authorization': 'Bearer ' + token
+        },
+        body: JSON.stringify(payload)
+      }, function (err, res, body) {
+        return resolve(JSON.parse(body));
+      }
+    );
+  });
+}
 
 const ScheduleTripIntentHandler_InProgress = {
   canHandle(handlerInput) {

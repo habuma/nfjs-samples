@@ -23,7 +23,7 @@
             "codeUri": "lambda/custom",
             "functionName": "ask-custom-starflyer-travel-default",
             "handler": "index.handler",
-            "revisionId": "74e94359-214e-498c-b2eb-2d2efce8137d",
+            "revisionId": "50fdb9c1-622d-467b-b703-70c52e5400b0",
             "runtime": "nodejs8.10"
           }
         ]
