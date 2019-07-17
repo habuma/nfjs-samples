@@ -5,11 +5,11 @@
         "en-US": {
           "summary": "Sample Short Description",
           "examplePhrases": [
-            "Alexa open star flyer travel",
+            "Alexa open hello world",
             "hello",
             "help"
           ],
-          "name": "starflyer-travel",
+          "name": "hello-uber-conf",
           "description": "Sample Full Description"
         }
       },
@@ -22,18 +22,10 @@
       "custom": {
         "endpoint": {
           "sourceDir": "lambda/custom",
-          "uri": "ask-custom-starflyer-travel-default"
+          "uri": "ask-custom-hello-uber-conf-default"
         }
       }
     },
-    "permissions": [
-      {
-        "name": "alexa::profile:given_name:read"
-      },
-      {
-        "name": "alexa::profile:email:read"
-      }
-    ],
     "manifestVersion": "1.0"
   }
 }

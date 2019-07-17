@@ -3,6 +3,14 @@
 
 const Alexa = require('ask-sdk-core');
 const request = require('request');
+const {DynamoDbPersistenceAdapter} = require ('ask-sdk-dynamodb-persistence-adapter');
+const persistenceAdapter = new DynamoDbPersistenceAdapter(
+  {
+    tableName: 'RememberWhereIWent',
+    createTable: true
+  }
+);
+
 
 const PERMISSIONS = ['alexa::profile:given_name:read', 'alexa::profile:email:read'];
 const LaunchRequestHandler = {
@@ -34,6 +42,16 @@ const LaunchRequestHandler = {
       .speak(speechText)
       .reprompt(speechText)
       .withSimpleCard('Hello World', speechText)
+      .addDirective({
+        type: 'Alexa.Presentation.APL.RenderDocument',
+        version: '1.0',
+        document: require('stoplight.json'),
+        datasources: {
+          "welcomeData": {
+            "welcomeText": speechText
+          }
+        }
+      })
       .getResponse();
   },
 };
@@ -78,6 +96,21 @@ const ScheduleTripIntentHandler = {
       // const destination = allSlots['destination'].value;
       const destination = allSlots['destination']
           .resolutions.resolutionsPerAuthority[0].values[0].value.name;
+
+
+      handlerInput.attributesManager.getPersistentAttributes()
+        .then((attributes) => {
+          if (attributes.previousDestination.destination) {
+            console.log("I remember that your previous destination was " + attributes.previousDestination.destination);
+          }
+          attributes.previousDestination = {
+            'destination': destination
+          };
+          handlerInput.attributesManager.setPersistentAttributes(attributes);
+          handlerInput.attributesManager.savePersistentAttributes();
+          console.log("I'll remember that your destination is " + destination);
+        });
+
 
       const departureDate = allSlots['departureDate'].value;
       const returnDate = allSlots['returnDate'].value;
@@ -247,5 +280,6 @@ exports.handler = skillBuilder
     SessionEndedRequestHandler
   )
   .withApiClient(new Alexa.DefaultApiClient())
+  .withPersistenceAdapter(persistenceAdapter)
   .addErrorHandlers(ErrorHandler)
   .lambda();

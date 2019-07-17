@@ -1,0 +1,42 @@
+{
+  "actions": [
+    {
+      "description": "Default Welcome Intent",
+      "name": "MAIN",
+      "fulfillment": {
+        "conversationName": "uberconfHello"
+      },
+      "intent": {
+        "name": "actions.intent.MAIN",
+        "trigger": {
+          "queryPatterns": [
+            "talk to uberconfHello"
+          ]
+        }
+      }
+    },
+    {
+      "description": "Say hi there",
+      "name": "HITHERE",
+      "fulfillment": {
+        "conversationName": "uberconfHello"
+      },
+      "intent": {
+        "name":"com.habuma.hello.HITHERE",
+        "trigger": {
+          "queryPatterns": [
+            "say hi there",
+            "say hi"
+          ]
+        }
+      }
+    }
+  ],
+  "conversations": {
+    "uberconfHello": {
+      "name": "uberconfHello",
+      "url": "https://us-central1-uber-conf.cloudfunctions.net/uberConf"
+    }
+  },
+  "locale": "en"
+}
