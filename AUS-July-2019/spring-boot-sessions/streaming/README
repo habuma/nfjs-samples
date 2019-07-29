@@ -1,0 +1,4 @@
+I had someone ask me during one of the breaks how to do streaming
+with Spring. Although not part of any of my talks, I put this together
+as a quick example. Once you have it running, you can use `curl` to
+hit http://localhost:8080/stream to get a stream of mini-JSON documents.
