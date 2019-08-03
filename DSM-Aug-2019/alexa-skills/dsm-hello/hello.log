@@ -1,0 +1,160 @@
+----User Says Start----
+User Says: open hello central iowa
+----User Says End----
+
+-----Considered Intents Start----
+Considered Intents: [
+  {
+    "name": "<LaunchRequest>"
+  }
+]
+-----Considered Intents End----
+
+----Json Input Start----
+Json Input: {
+  "version": "1.0",
+  "session": {
+    "new": true,
+    "sessionId": "amzn1.echo-api.session.8cf8c6fa-cda4-4e25-8325-45d8b42afa65",
+    "application": {
+      "applicationId": "amzn1.ask.skill.4b893d7d-15b9-432e-8c00-3c12953b07b6"
+    },
+    "user": {
+      "userId": "amzn1.ask.account.AH5A4DR3275TFX4EIQV75G2C4YOV2P2LGK7HGAB4ANJT5N3I7FHGLF36U627MKGVIAPW33XAUUOIGJ25XDEZHIDLJZ3EB4EMNN33TT5CE3AULJPOP3RVEI5TCKLI426CYUYESJ7DKRVKGKNX4GKMY7PAKMU7VIP5AIM263DXU7JG7N4VO6H7UKOJUHCRIFYC2DZ2B4IDFXXRJWY"
+    }
+  },
+  "context": {
+    "System": {
+      "application": {
+        "applicationId": "amzn1.ask.skill.4b893d7d-15b9-432e-8c00-3c12953b07b6"
+      },
+      "user": {
+        "userId": "amzn1.ask.account.AH5A4DR3275TFX4EIQV75G2C4YOV2P2LGK7HGAB4ANJT5N3I7FHGLF36U627MKGVIAPW33XAUUOIGJ25XDEZHIDLJZ3EB4EMNN33TT5CE3AULJPOP3RVEI5TCKLI426CYUYESJ7DKRVKGKNX4GKMY7PAKMU7VIP5AIM263DXU7JG7N4VO6H7UKOJUHCRIFYC2DZ2B4IDFXXRJWY"
+      },
+      "device": {
+        "deviceId": "amzn1.ask.device.AE3QOF556CFX6B2WMMX7DWNTT6VPYXHO5XH7PZU6BBYGOO2IZDSTLMRLORCRMCSA4D5E33UVH3H4MGPBKOLCTRFDEK73IYUQYZD7QY3S5DWBQRXDWEXTMR6KOLZHN5XLO67B7ONDZA2K4RIBGN2KOKAEMM6Q",
+        "supportedInterfaces": {
+          "Alexa.Presentation.HTML": {}
+        }
+      },
+      "apiEndpoint": "https://api.amazonalexa.com",
+      "apiAccessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLjRiODkzZDdkLTE1YjktNDMyZS04YzAwLTNjMTI5NTNiMDdiNiIsImV4cCI6MTU2NDc4NzU1NCwiaWF0IjoxNTY0Nzg3MjU0LCJuYmYiOjE1NjQ3ODcyNTQsInByaXZhdGVDbGFpbXMiOnsiY29udGV4dCI6IkFBQUFBQUFBQUFBeU9ZY2I2dCtaYmJoN254Vm9TQUZnSXdFQUFBQUFBQUErZEhERWkzdWxKUEdqcnVTVE0wT0xJV3F1R2lCaFprVmszYkRGWVpYWTlvaGprMzNVNXFjcUp1WVFHZGFQWUN5VSttSzA0R2hKTlh3Rk5Wa2IrQ0ZKY3JvWEgwSWtoN2Y5aXJMSk1GM29nU283YVpBbGVVNjdScXdqazI0SEhPT3hkWW1VeGo4NXBGY3NwWnJMQmFwaGN4N1RZcktERmw5LzJjSzF0NDRZQ2dtSW9nN0VkalNGMHBVZkhWL0N2RnBOQkRmemVtOUg3RXhxWnBHM2xrODR1dWxWQkR1MG5Bb3psZ3RWdWp5UHVYNmVsdjdXYmRqY3E4cEYzKzBSMFk1dkdnRmtGVmFmL2Q3ajZqRDBWdzNkL3ZzaEhLSllPVURWQzdaVlVQMHBGRUpRVm0vdHJ2dThFT2FpTkhIek0reUdrRHF3T2drYkluNnc1eGs4Nkl0TUovdmUvTy94YmovOWluN3ZMbXdma21tN3cvMjlVeHpldTRvR3RTL2pRWFZkNnlVPSIsImNvbnNlbnRUb2tlbiI6bnVsbCwiZGV2aWNlSWQiOiJhbXpuMS5hc2suZGV2aWNlLkFFM1FPRjU1NkNGWDZCMldNTVg3RFdOVFQ2VlBZWEhPNVhIN1BaVTZCQllHT08ySVpEU1RMTVJMT1JDUk1DU0E0RDVFMzNVVkgzSDRNR1BCS09MQ1RSRkRFSzczSVlVUVlaRDdRWTNTNURXQlFSWERXRVhUTVI2S09MWkhONVhMTzY3QjdPTkRaQTJLNFJJQkdOMktPS0FFTU02USIsInVzZXJJZCI6ImFtem4xLmFzay5hY2NvdW50LkFINUE0RFIzMjc1VEZYNEVJUVY3NUcyQzRZT1YyUDJMR0s3SEdBQjRBTkpUNU4zSTdGSEdMRjM2VTYyN01LR1ZJQVBXMzNYQVVVT0lHSjI1WERFWkhJRExKWjNFQjRFTU5OMzNUVDVDRTNBVUxKUE9QM1JWRUk1VENLTEk0MjZDWVVZRVNKN0RLUlZLR0tOWDRHS01ZN1BBS01VN1ZJUDVBSU0yNjNEWFU3Skc3TjRWTzZIN1VLT0pVSENSSUZZQzJEWjJCNElERlhYUkpXWSJ9fQ.GCWv0RSLNqeWKtT5g77qexyuV5fqBtt0bAxm-revrzG-oTlbOh7OvdoUCEionCATXtM5K3GBEfhNjve68b1z1wV0nrhDN1PIpGfMxXzKPGcFPaw67AjDw90NMRMWRtJKHQBl5WuvjotVGNCWXvMuRewHMfwRvYnP_yzP_C8pxfNRmFDuWrJ_D7jjfGfu4Mx9P29q7dqes1-lPXfSVgS4b2IO8qLTybu2ycLsXIHX6gfvSxdTXOvHOhaXrU_bb8OiVO6-siZumZBnusqRAH4wz-p1tpqWCsi0exr60RSmpMHl8U9W201B8p5jzQA6mYsxcjQV25LmhhyXiY3srPOIKA"
+    }
+  },
+  "request": {
+    "type": "LaunchRequest",
+    "requestId": "amzn1.echo-api.request.6243131d-c97b-4cec-8d0b-a8bf99e5fa21",
+    "timestamp": "2019-08-02T23:07:34Z",
+    "locale": "en-US",
+    "shouldLinkResultBeReturned": false
+  }
+}
+----Json Input End----
+
+----Json Output Start----
+Json Output: {
+  "body": {
+    "version": "1.0",
+    "response": {
+      "outputSpeech": {
+        "type": "SSML",
+        "ssml": "<speak>Welcome, you can say Hello or Help. Which would you like to try?</speak>"
+      },
+      "reprompt": {
+        "outputSpeech": {
+          "type": "SSML",
+          "ssml": "<speak>Welcome, you can say Hello or Help. Which would you like to try?</speak>"
+        }
+      },
+      "shouldEndSession": false,
+      "type": "_DEFAULT_RESPONSE"
+    },
+    "sessionAttributes": {},
+    "userAgent": "ask-node/2.7.0 Node/v8.10.0"
+  }
+}
+----Json Output End----
+
+----Alexa Responds Start----
+Alexa Responds: Welcome, you can say Hello or Help. Which would you like to try?
+----Alexa Responds End----
+
+----User Says Start----
+User Says: say hello
+----User Says End----
+
+-----Considered Intents Start----
+Considered Intents: [
+  {
+    "name": "HelloWorldIntent",
+    "confirmationStatus": "NONE",
+    "slots": {}
+  }
+]
+-----Considered Intents End----
+
+----Json Input Start----
+Json Input: {
+  "version": "1.0",
+  "session": {
+    "new": false,
+    "sessionId": "amzn1.echo-api.session.8cf8c6fa-cda4-4e25-8325-45d8b42afa65",
+    "application": {
+      "applicationId": "amzn1.ask.skill.4b893d7d-15b9-432e-8c00-3c12953b07b6"
+    },
+    "user": {
+      "userId": "amzn1.ask.account.AH5A4DR3275TFX4EIQV75G2C4YOV2P2LGK7HGAB4ANJT5N3I7FHGLF36U627MKGVIAPW33XAUUOIGJ25XDEZHIDLJZ3EB4EMNN33TT5CE3AULJPOP3RVEI5TCKLI426CYUYESJ7DKRVKGKNX4GKMY7PAKMU7VIP5AIM263DXU7JG7N4VO6H7UKOJUHCRIFYC2DZ2B4IDFXXRJWY"
+    }
+  },
+  "context": {
+    "System": {
+      "application": {
+        "applicationId": "amzn1.ask.skill.4b893d7d-15b9-432e-8c00-3c12953b07b6"
+      },
+      "user": {
+        "userId": "amzn1.ask.account.AH5A4DR3275TFX4EIQV75G2C4YOV2P2LGK7HGAB4ANJT5N3I7FHGLF36U627MKGVIAPW33XAUUOIGJ25XDEZHIDLJZ3EB4EMNN33TT5CE3AULJPOP3RVEI5TCKLI426CYUYESJ7DKRVKGKNX4GKMY7PAKMU7VIP5AIM263DXU7JG7N4VO6H7UKOJUHCRIFYC2DZ2B4IDFXXRJWY"
+      },
+      "device": {
+        "deviceId": "amzn1.ask.device.AE3QOF556CFX6B2WMMX7DWNTT6VPYXHO5XH7PZU6BBYGOO2IZDSTLMRLORCRMCSA4D5E33UVH3H4MGPBKOLCTRFDEK73IYUQYZD7QY3S5DWBQRXDWEXTMR6KOLZHN5XLO67B7ONDZA2K4RIBGN2KOKAEMM6Q",
+        "supportedInterfaces": {
+          "Alexa.Presentation.HTML": {}
+        }
+      },
+      "apiEndpoint": "https://api.amazonalexa.com",
+      "apiAccessToken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImtpZCI6IjEifQ.eyJhdWQiOiJodHRwczovL2FwaS5hbWF6b25hbGV4YS5jb20iLCJpc3MiOiJBbGV4YVNraWxsS2l0Iiwic3ViIjoiYW16bjEuYXNrLnNraWxsLjRiODkzZDdkLTE1YjktNDMyZS04YzAwLTNjMTI5NTNiMDdiNiIsImV4cCI6MTU2NDc4NzU1NywiaWF0IjoxNTY0Nzg3MjU3LCJuYmYiOjE1NjQ3ODcyNTcsInByaXZhdGVDbGFpbXMiOnsiY29udGV4dCI6IkFBQUFBQUFBQUFBeU9ZY2I2dCtaYmJoN254Vm9TQUZnSXdFQUFBQUFBQUNjK3NpOExVSmdHdXhLUVJqNlBoQzFtZW9rM0hmZzQyNnJhaGU3UGZtS3hVdFdMMklKU0JQTVBkZTZ3M3UxUU5iN0MxVXdwcXZsU2FzTmxKNExjejMrVGV3U3RhUE1rMzFwcmRENE9xY3ltV2hheTE1aU00VFhMZzhzQitqNk5pbGFmcnJaeVNOY3RMNFRJUmhTbThLT2hNNXhnbkI5d0ZJUmVPSTJ0dkMzYXhmS1Zyd3F6U0hTVktyUkIrRUVWbEVCOGNWeVo5cDN5Vk5RQVNZTlVJZit0MTN6UHVuRTFyTU53YjRyVWNnc1AxZXlWRUsyNXJQVUQ5eVRuSnVOc1BaeXp3N1dvV1l1VkhheGdEMjkyN2ZHeW13cVI2YVRCeVNOKzhyYnh4WEZtcVVJN09sMzFUL1BhTllmUlNCTEY0RFRpQU5EMW5IN0VvRTlwenc3NWl3bnovTTkrQ0xaODdTYjBGUjR3Y0JpMXo4YkRjRk02d3FOM2dOeDVLcW9XYzVWYUNJPSIsImNvbnNlbnRUb2tlbiI6bnVsbCwiZGV2aWNlSWQiOiJhbXpuMS5hc2suZGV2aWNlLkFFM1FPRjU1NkNGWDZCMldNTVg3RFdOVFQ2VlBZWEhPNVhIN1BaVTZCQllHT08ySVpEU1RMTVJMT1JDUk1DU0E0RDVFMzNVVkgzSDRNR1BCS09MQ1RSRkRFSzczSVlVUVlaRDdRWTNTNURXQlFSWERXRVhUTVI2S09MWkhONVhMTzY3QjdPTkRaQTJLNFJJQkdOMktPS0FFTU02USIsInVzZXJJZCI6ImFtem4xLmFzay5hY2NvdW50LkFINUE0RFIzMjc1VEZYNEVJUVY3NUcyQzRZT1YyUDJMR0s3SEdBQjRBTkpUNU4zSTdGSEdMRjM2VTYyN01LR1ZJQVBXMzNYQVVVT0lHSjI1WERFWkhJRExKWjNFQjRFTU5OMzNUVDVDRTNBVUxKUE9QM1JWRUk1VENLTEk0MjZDWVVZRVNKN0RLUlZLR0tOWDRHS01ZN1BBS01VN1ZJUDVBSU0yNjNEWFU3Skc3TjRWTzZIN1VLT0pVSENSSUZZQzJEWjJCNElERlhYUkpXWSJ9fQ.Qn11i6ExqxJUa4gleaS6sA5ltWIvjTBts7ByC5FfM3VbrKYfcorChoFaaD5xVBUwRi9ciQgLhAue8_LjC2VhFaXyv73XPjJF79lVVzYxIdsC3XtoUt7Wl0nq3bap59S4kQMK-4xZELgOCVFqtSWTcUnDlxva-pqyXzrltz1zM3skKeA4TLzAA-GThMe-y3JsttinS_Ri2w6sy-_vE5dDLzfQIDLa5XK8F5TjWG1DAsQl1ZQ_aEgrX-NoDWBAEFheTpTQ-muRM9hXrLUENE89Rvet4Eclj3GIMfeLXd9tDpJZOS_nGFo8FiBsiqGNcVnuFYFo9XiBk2qBNvYLaREaCQ"
+    }
+  },
+  "request": {
+    "type": "IntentRequest",
+    "requestId": "amzn1.echo-api.request.d4ccf45b-73c2-4b51-ba54-c02d20818e5a",
+    "timestamp": "2019-08-02T23:07:37Z",
+    "locale": "en-US",
+    "intent": {
+      "name": "HelloWorldIntent",
+      "confirmationStatus": "NONE"
+    }
+  }
+}
+----Json Input End----
+
+----Json Output Start----
+Json Output: {
+  "body": {
+    "version": "1.0",
+    "response": {
+      "outputSpeech": {
+        "type": "SSML",
+        "ssml": "<speak>Hello Central Iowa Software Symposium!</speak>"
+      },
+      "type": "_DEFAULT_RESPONSE"
+    },
+    "sessionAttributes": {},
+    "userAgent": "ask-node/2.7.0 Node/v8.10.0"
+  }
+}
+----Json Output End----
+
+----Alexa Responds Start----
+Alexa Responds: Hello Central Iowa Software Symposium!
+----Alexa Responds End----
+

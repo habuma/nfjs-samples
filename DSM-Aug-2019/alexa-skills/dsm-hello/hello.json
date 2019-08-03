@@ -1,0 +1,9 @@
+{
+  "skillId": "amzn1.ask.skill.4b893d7d-15b9-432e-8c00-3c12953b07b6",
+  "locale": "en-US",
+  "type": "text",
+  "userInput": [
+    "open hello central iowa",
+    "say hello"
+  ]
+}
