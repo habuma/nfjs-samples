@@ -1,0 +1,31 @@
+greeting:
+  message: Hello, World!
+  
+info:
+  contact:
+    phone: 123-123-1234
+    email: support@example.com
+  fax: 321-321-3210
+  greeting: ${greeting.message}
+  
+spring:
+  jpa:
+    show-sql: true
+  
+  data:
+    rest:
+      base-path: /api
+  
+management:
+  info:
+    git:
+      mode: full
+      
+  endpoint:
+    health:
+      show-details: always
+      
+  endpoints:
+    web:
+      exposure:
+        include: '*'
