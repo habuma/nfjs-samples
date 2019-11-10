@@ -1,0 +1,19 @@
+greeting:
+  message: Hello, World!
+
+server:
+  port: 9090
+
+---
+spring:
+  profiles: redmond
+
+greeting:
+  message: Hello, Redmond!
+  
+---
+spring:
+  profiles: reston
+
+greeting:
+  message: Hello, Reston!

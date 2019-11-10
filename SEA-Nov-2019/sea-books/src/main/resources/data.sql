@@ -1,0 +1,1 @@
+insert into Book (isbn, title, author) values ('123456790','Knitting With Dog Hair','Kendall Crolius');
