@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+	<title>Taco List</title>
+  </head>
+  <body>
+  
+  	<h1>Taco List</h1>
+  
+  	<ul>
+  		<li th:each="taco : ${tacos}"><span th:text="${taco.name}">Some Taco</span> -
+  		<span th:text="${taco.filling}">Some Taco</span> in a 
+  		<span th:text="${taco.wrap}">Some Taco</span> tortilla 
+  		</li>
+  	</ul>
+  </body>
+</html>

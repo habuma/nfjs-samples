@@ -1,0 +1,13 @@
+---
+configuration:
+  locales: en-US
+
+---
+- test: Launch request
+- LaunchRequest:
+  - response.outputSpeech.ssml: Welcome, you can say Hello or Help. Which would you like to try?
+
+---
+- test: Hello World intent
+- HelloWorldIntent:
+  - response.outputSpeech.ssml: Hello World!

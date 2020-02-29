@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1582935599844" clover="3.2.0">
+  <project timestamp="1582935599845" name="All files">
+    <metrics statements="42" coveredstatements="22" conditionals="9" coveredconditionals="2" methods="19" coveredmethods="7" elements="70" coveredelements="31" complexity="0" loc="42" ncloc="42" packages="1" files="2" classes="2"/>
+    <file name="index.js" path="/Users/habuma/msn-alexa/hello-madison/lambda/custom/index.js">
+      <metrics statements="41" coveredstatements="21" conditionals="9" coveredconditionals="2" methods="19" coveredmethods="7"/>
+      <line num="6" count="1" type="stmt"/>
+      <line num="8" count="1" type="stmt"/>
+      <line num="10" count="1" type="stmt"/>
+      <line num="12" count="1" type="stmt"/>
+      <line num="14" count="2" type="stmt"/>
+      <line num="17" count="1" type="stmt"/>
+      <line num="19" count="1" type="stmt"/>
+      <line num="26" count="1" type="stmt"/>
+      <line num="28" count="1" type="cond" truecount="2" falsecount="0"/>
+      <line num="32" count="1" type="stmt"/>
+      <line num="34" count="1" type="stmt"/>
+      <line num="40" count="1" type="stmt"/>
+      <line num="42" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="46" count="0" type="stmt"/>
+      <line num="48" count="0" type="stmt"/>
+      <line num="55" count="1" type="stmt"/>
+      <line num="57" count="0" type="cond" truecount="0" falsecount="3"/>
+      <line num="62" count="0" type="stmt"/>
+      <line num="64" count="0" type="stmt"/>
+      <line num="74" count="1" type="stmt"/>
+      <line num="76" count="0" type="cond" truecount="0" falsecount="2"/>
+      <line num="80" count="0" type="stmt"/>
+      <line num="82" count="0" type="stmt"/>
+      <line num="93" count="1" type="stmt"/>
+      <line num="95" count="0" type="stmt"/>
+      <line num="98" count="0" type="stmt"/>
+      <line num="100" count="0" type="stmt"/>
+      <line num="108" count="1" type="stmt"/>
+      <line num="110" count="0" type="stmt"/>
+      <line num="113" count="0" type="stmt"/>
+      <line num="114" count="0" type="stmt"/>
+      <line num="116" count="0" type="stmt"/>
+      <line num="127" count="1" type="stmt"/>
+      <line num="129" count="0" type="stmt"/>
+      <line num="132" count="0" type="stmt"/>
+      <line num="133" count="0" type="stmt"/>
+      <line num="135" count="0" type="stmt"/>
+      <line num="143" count="1" type="stmt"/>
+      <line num="145" count="2" type="stmt"/>
+      <line num="149" count="2" type="stmt"/>
+      <line num="158" count="1" type="stmt"/>
+    </file>
+    <file name="languageStrings.js" path="/Users/habuma/msn-alexa/hello-madison/lambda/custom/languageStrings.js">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      <line num="8" count="1" type="stmt"/>
+    </file>
+  </project>
+</coverage>
