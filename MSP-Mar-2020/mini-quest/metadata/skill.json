@@ -1,0 +1,37 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "mini-quest-2",
+          "summary": "Sample Short Description",
+          "description": "Sample Full Description",
+          "examplePhrases": [
+            "Alexa open hello world",
+            "hello",
+            "help"
+          ],
+          "keywords": []
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "Sample Testing Instructions.",
+      "category": "KNOWLEDGE_AND_TRIVIA",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "sourceDir": "lambda/custom",
+          "uri": "ask-custom-mini-quest-2-default"
+        },
+        "interfaces": [
+          {
+            "type": "ALEXA_PRESENTATION_APL"
+          }
+        ]
+      }
+    },
+    "manifestVersion": "1.0"
+  }
+}

@@ -1,0 +1,19 @@
+<html>
+	<head>
+	  <title>Hello Tacos</title>
+	  <link rel="stylesheet" 
+	        th:href="@{/styles.css}"/>
+    </head>
+
+	<body>
+		<h2>Here are some muy delicioso tacos!</h2>
+		
+		<ul>
+			<li th:each="taco : ${tacos}">
+				<span th:text="${taco.name}">TACO NAME</span> -
+				<span th:text="${taco.filling}">TACO NAME</span> in a 
+				<span th:text="${taco.wrap}">TACO NAME</span> 
+			</li>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,153 @@
+@start
+  *say
+    Welcome to mini-quest! If you are a brave adventurer, ready to face peril and seek treasure, say "Let's go"!
+    
+  *then
+    hear go, venture on {
+      -> at castle door
+    }
+    
+@at castle door
+  *say
+    You are standing on the drawbridge of a rather tiny castle. To your left and right is a moat that surrounds the castle. Behind you is the safety of home. But if you go forward, you'll enter the castle. What do you want to do?
+  
+  *then
+    hear go left, go right, left, right, jump in moat {
+      -> eaten by alligators
+    }
+    
+    hear go back, go home, run home, run away {
+      -> run away
+    }
+    
+    hear enter castle, enter, go forward {
+      -> castle entryway
+    }
+    
+@eaten by alligators
+  *say
+    Although the waters of the castle moat look like a great place to swim, you quickly find that they are filled with hungry alligators. Unfortunately, you are their meal.
+  *then
+    >> END
+
+@run away
+  *say
+    As you turn to run home, the drawbridge crumbles below you. You fall into the alligator-infested waters of the castle moat and die.
+
+  *then
+    >> END
+    
+@castle entryway
+  *say
+    The castle entryway is dark and dusty, but there's just enough ambient light to make out what appears to be a wooden box.
+    
+
+  *then
+    if !lockGone {
+      <-> box is locked
+    }
+  
+    if boxOpen {
+      <-> box is open
+    }
+    
+    if lockGone and !boxOpen {
+      <-> box is closed
+    }
+
+    if !haveReadNote {
+        hear read note {
+          -> read note
+        }
+    }
+
+    if !boxOpen {
+      hear open box {
+        if lockGone {
+          -> open box
+        }
+      
+        if !lockGone {
+          -> box locked
+        }
+      }
+    }
+    
+    
+    if haveReadNote and !lockGone {
+        hear open sesame {
+          -> lock disappears
+        }
+    }
+
+    if boxOpen {
+      hear take gem {
+        -> take gem
+      }
+    }
+    
+@box is locked
+  *say
+    The box is closed and wrapped in chains. You wonder what's inside. There is a parchment note attached.
+    
+  *then
+    >> RETURN
+
+@box is open
+  *say
+    The box appears to be open.
+    
+  *then
+    >> RETURN
+
+@box is closed
+  *say
+    The box is closed and there are chains on the floor around it. You wonder what's inside. There is a parchment note attached.
+    
+  *then
+    >> RETURN
+
+@read note
+  *say
+    The note is scrawled clumsily, but you can make out the words "Say 'open sesame'". As you read the note, it crumbles into dust on the ground.
+    
+  *then
+    flag haveReadNote
+    -> castle entryway
+    
+@box locked
+  *say
+    The box is secured by a chain and an unusual lock. The lock has no slot for a key or means of entering a combination. You wonder how it might be opened. If only there were some instructions...
+
+  *then
+    -> castle entryway
+
+@open box
+  *say
+    With the lock and chains gone, the box opens easily. Inside, you see a brilliant gemstone. It must be worth a fortune!
+    
+  *then
+    flag boxOpen
+    -> castle entryway
+    
+@lock disappears
+  *say
+    Upon uttering the words "open sesame", the lock disintegrates and the chains fall off of the box.
+    
+  *then
+    flag lockGone
+    -> castle entryway
+  
+@take gem
+  *say
+    As you remove the gem from the box, it glows even brighter. You find yourself
+    momentarily mesmerized by its brilliance, but gather your wits and put the gem
+    into your pocket.
+
+    You leave the castle and return home. You immediately seek out a gemologist to
+    appraise your newfound treasure. It sells at market for a handsome price,
+    enabling you to live comfortably for the remainder of your days.
+
+  *then
+    flag haveGem
+    >> END
