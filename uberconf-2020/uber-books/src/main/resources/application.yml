@@ -1,0 +1,38 @@
+logging.level:
+  org.springframework.security: DEBUG
+
+spring:
+  application:
+    name: uber-books
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:9090
+
+info:
+  appName: ${spring.application.name}
+  contact:
+    email: support@example.com
+    phone: 123-123-1234
+    alternate: 321-321-3210
+  fax: 191-292-3939
+  
+greeting:
+  message: Hello UberConf!  
+
+management:
+  info:
+    git:
+      mode: full
+      
+  endpoint:
+    health:
+      show-details: always
+      
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude:
+        - heapdump
