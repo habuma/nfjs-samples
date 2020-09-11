@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: NFJS-Books
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:9999
+
+greeting:
+  message: Hello Virtual NFJS!
+  
+info:
+  contact:
+    phone-number: 123-123-1234
+    email: support@example.com
+  fax: 321-321-3210
+  salutation: ${greeting.message}
+  
+  
+management:
+  info:
+    git:
+      mode: full
+      
+  endpoint:
+    health:
+      show-details: always
+      
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude: heapdump
