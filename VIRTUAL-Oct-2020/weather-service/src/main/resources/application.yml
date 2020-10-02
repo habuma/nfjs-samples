@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: weather-service
+
+server:
+  shutdown: graceful
+
+management:
+  endpoint:
+    health:
+      show-details: always
+      
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+      
+weather:
+  current: Sunny and warm

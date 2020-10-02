@@ -1,0 +1,20 @@
+apiVersion: skaffold/v2beta7
+kind: Config
+metadata:
+  name: sc-fun
+build:
+  tagPolicy:
+    sha256: {}
+  artifacts:
+  - image: habuma/hello-k8s
+    buildpacks:
+      builder: gcr.io/paketo-buildpacks/builder:base-platform-api-latest
+      dependencies:
+        paths:
+        - src/main
+        - pom.xml
+deploy:
+  kubectl:
+    manifests:
+    - src/main/k8s/configmap.yaml
+    - src/main/k8s/deploy.yaml

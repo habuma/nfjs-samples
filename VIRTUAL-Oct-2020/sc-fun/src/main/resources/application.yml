@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: hello-k8s
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,env
