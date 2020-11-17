@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: hello-service
+  cloud:
+    kubernetes:
+      reload:
+        enabled: true
+        strategy: REFRESH
+        
+greeting:
+  message: Hello world!
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        
+  endpoint:
+    health:
+      show-details: always
