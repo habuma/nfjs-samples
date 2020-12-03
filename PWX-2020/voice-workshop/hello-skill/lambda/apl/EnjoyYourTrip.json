@@ -1,0 +1,91 @@
+{
+  "type": "APL",
+  "version": "1.4",
+  "settings": {},
+  "theme": "dark",
+  "import": [],
+  "resources": [],
+  "styles": {},
+  "onMount": [],
+  "graphics": {},
+  "commands": {},
+  "layouts": {},
+  "mainTemplate": {
+      "parameters": [
+          "payload"
+      ],
+      "items": [
+          {
+              "type": "Container",
+              "height": "100%",
+              "width": "100%",
+              "paddingTop": "16dp",
+              "paddingLeft": "16dp",
+              "paddingRight": "16dp",
+              "paddingBottom": "16dp",
+              "items": [
+                  {
+                      "type": "Frame",
+                      "width": "50vw",
+                      "height": "33vh",
+                      "borderColor": "#FF0000",
+                      "backgroundColor": "#00FF00",
+                      "borderRadius": "100",
+                      "item": [
+                          {
+                              "type": "Text",
+                              "text": "Enjoy your trip",
+                              "fontSize": "42dp",
+                              "paddingTop": "52dp",
+                              "paddingLeft": "10dp",
+                              "paddingBottom": "12dp",
+                              "height": "32dp",
+                              "width": "300dp"
+                          }
+                      ]
+                  },
+                  {
+                      "type": "Frame",
+                      "width": "25vw",
+                      "height": "33vh",
+                      "borderColor": "#FF0000",
+                      "backgroundColor": "#0000FF",
+                      "borderRadius": "100",
+                      "item": [
+                          {
+                              "type": "Text",
+                              "text": "to",
+                              "fontSize": "42dp",
+                              "paddingTop": "52dp",
+                              "paddingLeft": "10dp",
+                              "paddingBottom": "12dp",
+                              "height": "32dp",
+                              "width": "300dp"
+                          }
+                      ]
+                  },
+                  {
+                      "type": "Frame",
+                      "width": "75vw",
+                      "height": "33vh",
+                      "borderColor": "#FF0000",
+                      "backgroundColor": "#FF0000",
+                      "borderRadius": "100",
+                      "item": [
+                          {
+                              "type": "Text",
+                              "text": "${payload.tripData.destination}",
+                              "fontSize": "42dp",
+                              "paddingTop": "52dp",
+                              "paddingLeft": "10dp",
+                              "paddingBottom": "12dp",
+                              "height": "32dp",
+                              "width": "300dp"
+                          }
+                      ]
+                  }
+              ]
+          }
+      ]
+  }
+}

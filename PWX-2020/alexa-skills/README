@@ -1,0 +1,3 @@
+This is the "favorite-things" sample Alexa skill created during the two Alexa skills sessions at Progressive Web Experience 2020.
+
+Note that the skill manifest has been wiped of any actual AWS Lambda endpoints.

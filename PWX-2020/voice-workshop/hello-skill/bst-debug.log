@@ -1,0 +1,24 @@
+2020-11-30T18:13:25.737Z error: bst-test            Error using bst-test on Node: v12.16.2
+2020-11-30T18:13:25.746Z error: bst-test            Error: Cannot find module 'ask-sdk-core' from 'index.js'
+    at Resolver.resolveModule (/Users/habuma/.nvm/versions/node/v12.16.2/lib/node_modules/bespoken-tools/node_modules/jest-resolve/build/index.js:259:17)
+    at Resolver._getVirtualMockPath (/Users/habuma/.nvm/versions/node/v12.16.2/lib/node_modules/bespoken-tools/node_modules/jest-resolve/build/index.js:390:14)
+    at Resolver._getAbsolutePath (/Users/habuma/.nvm/versions/node/v12.16.2/lib/node_modules/bespoken-tools/node_modules/jest-resolve/build/index.js:376:14)
+    at Resolver.getModuleID (/Users/habuma/.nvm/versions/node/v12.16.2/lib/node_modules/bespoken-tools/node_modules/jest-resolve/build/index.js:348:31)
+    at Runtime._shouldMock (/Users/habuma/.nvm/versions/node/v12.16.2/lib/node_modules/bespoken-tools/node_modules/jest-runtime/build/index.js:942:37)
+    at Runtime.require [as requireModuleOrMock] (/Users/habuma/.nvm/versions/node/v12.16.2/lib/node_modules/bespoken-tools/node_modules/jest-runtime/build/index.js:595:16)
+    at Object.<anonymous> (/Users/habuma/pwx-workshop/hello-progressive-web-too/lambda/index.js:4:15)
+    at Runtime._execModule (/Users/habuma/.nvm/versions/node/v12.16.2/lib/node_modules/bespoken-tools/node_modules/jest-runtime/build/index.js:867:68)
+    at Runtime._loadModule (/Users/habuma/.nvm/versions/node/v12.16.2/lib/node_modules/bespoken-tools/node_modules/jest-runtime/build/index.js:577:12)
+    at Runtime.requireModule (/Users/habuma/.nvm/versions/node/v12.16.2/lib/node_modules/bespoken-tools/node_modules/jest-runtime/build/index.js:433:10)
+2020-11-30T18:13:25.747Z error: bst-test            Error using bst-test on Node: v12.16.2
+2020-11-30T18:13:25.749Z error: bst-test            TypeError: lambdaFunction is not a function
+    at /Users/habuma/.nvm/versions/node/v12.16.2/lib/node_modules/bespoken-tools/node_modules/skill-testing-ml/node_modules/virtual-alexa/lib/src/impl/ModuleInvoker.js:31:27
+    at new Promise (<anonymous>)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeFunction (/Users/habuma/.nvm/versions/node/v12.16.2/lib/node_modules/bespoken-tools/node_modules/skill-testing-ml/node_modules/virtual-alexa/lib/src/impl/ModuleInvoker.js:21:16)
+    at Function.Object.<anonymous>.ModuleInvoker.invokeHandler (/Users/habuma/.nvm/versions/node/v12.16.2/lib/node_modules/bespoken-tools/node_modules/skill-testing-ml/node_modules/virtual-alexa/lib/src/impl/ModuleInvoker.js:18:30)
+    at LocalSkillInteractor.Object.<anonymous>.LocalSkillInteractor.invoke (/Users/habuma/.nvm/versions/node/v12.16.2/lib/node_modules/bespoken-tools/node_modules/skill-testing-ml/node_modules/virtual-alexa/lib/src/impl/LocalSkillInteractor.js:24:50)
+    at LocalSkillInteractor.<anonymous> (/Users/habuma/.nvm/versions/node/v12.16.2/lib/node_modules/bespoken-tools/node_modules/skill-testing-ml/node_modules/virtual-alexa/lib/src/impl/SkillInteractor.js:65:41)
+    at step (/Users/habuma/.nvm/versions/node/v12.16.2/lib/node_modules/bespoken-tools/node_modules/skill-testing-ml/node_modules/virtual-alexa/lib/src/impl/SkillInteractor.js:32:23)
+    at Object.next (/Users/habuma/.nvm/versions/node/v12.16.2/lib/node_modules/bespoken-tools/node_modules/skill-testing-ml/node_modules/virtual-alexa/lib/src/impl/SkillInteractor.js:13:53)
+    at /Users/habuma/.nvm/versions/node/v12.16.2/lib/node_modules/bespoken-tools/node_modules/skill-testing-ml/node_modules/virtual-alexa/lib/src/impl/SkillInteractor.js:7:71
+    at new Promise (<anonymous>)

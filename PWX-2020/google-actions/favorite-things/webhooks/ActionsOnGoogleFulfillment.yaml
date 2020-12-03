@@ -1,0 +1,5 @@
+handlers:
+- name: favoriteColorEvent
+- name: WhatIsAPetIntentHandler
+inlineCloudFunction:
+  executeFunction: ActionsOnGoogleFulfillment

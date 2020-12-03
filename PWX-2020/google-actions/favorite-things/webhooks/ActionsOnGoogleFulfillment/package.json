@@ -1,0 +1,15 @@
+{
+  "name": "ActionsOnGoogleFulfillment",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Actions on Google fulfillment",
+  "engines": {
+    "node": "10"
+  },
+  "main": "index.js",
+  "dependencies": {
+    "@assistant/conversation": "^3.0.0",
+    "firebase-admin": "^8.12.1",
+    "firebase-functions": "^3.6.2"
+  }
+}

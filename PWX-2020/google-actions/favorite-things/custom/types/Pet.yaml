@@ -1,0 +1,27 @@
+synonym:
+  entities:
+    Cat:
+      synonyms:
+      - Cat
+    Dog:
+      synonyms:
+      - Dog
+    Fish:
+      synonyms:
+      - Fish
+    Hamster:
+      synonyms:
+      - Hamster
+      - Gerbil
+    Lizard:
+      synonyms:
+      - Lizard
+    Alligator:
+      synonyms:
+      - Alligator
+      - Gator
+    Parakeet:
+      synonyms:
+      - Parakeet
+      - Budgie
+  matchType: EXACT_MATCH

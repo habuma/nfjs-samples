@@ -1,0 +1,35 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "..."
+        },
+        "regions": {
+          "EU": {
+            "endpoint": {
+              "uri": "..."
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "..."
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "..."
+            }
+          }
+        }
+      }
+    },
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "Favorite Things"
+        }
+      }
+    }
+  }
+}
