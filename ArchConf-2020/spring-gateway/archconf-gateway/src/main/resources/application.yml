@@ -1,0 +1,50 @@
+server:
+  port: 9090
+
+spring:
+  cloud:
+    gateway:
+      default-filters:
+      - AddRequestHeader=X-NFJS-DEFAULT-FILTERS, ArchConf-2020
+      routes:
+      - id: hello
+        uri: lb://hello-service
+        predicates:
+        - Path=/hello
+        - Weight=group1,9
+      - id: hello2
+        uri: lb://hello-service
+        predicates:
+        - Path=/hello
+        - Weight=group1,1
+        filters:
+        - RewritePath=/hello, /bye
+      - id: bye
+        uri: http://localhost:8080
+        predicates:
+        - Path=/bye
+        filters:
+        - name: RequestRateLimiter
+          args:
+            redis-rate-limiter:
+              burst-capacity: 2
+              replenish-rate: 2
+            key-resolver: '#{@userKeyResolver}'
+      - id: echo
+        uri: ws://localhost:9000
+        predicates:
+        - Path=/echo 
+        
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        
+  endpoint:
+    gateway:
+      enabled: true
+    metrics:
+      enabled: true
+    health:
+      show-details: always

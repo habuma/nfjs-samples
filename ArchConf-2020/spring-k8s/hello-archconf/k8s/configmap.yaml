@@ -1,0 +1,13 @@
+kind: ConfigMap
+apiVersion: v1
+metadata:
+  name: hello-config
+data:
+  application.yml: |-
+    greeting:
+      message: Hello from YAML
+    farewell:
+      message: Goodbye from YAML
+  application.properties: |-
+    greeting.message: Hello from props
+    farewell.message: Goodbye from props
