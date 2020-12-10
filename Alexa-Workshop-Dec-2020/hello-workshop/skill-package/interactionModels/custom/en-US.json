@@ -1,0 +1,209 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "hello workshop",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello",
+            "aloha",
+            "hello world",
+            "hey there"
+          ]
+        },
+        {
+          "name": "FavoriteColorIntent",
+          "slots": [
+            {
+              "name": "favColor",
+              "type": "AMAZON.Color"
+            }
+          ],
+          "samples": [
+            "my favorite color is {favColor}",
+            "i really like {favColor}",
+            "{favColor} is my favorite color"
+          ]
+        },
+        {
+          "name": "FavoriteThingsIntent",
+          "slots":[
+            {
+              "name": "favColor",
+              "type": "AMAZON.Color"
+            },
+            {
+              "name": "favMovie",
+              "type": "AMAZON.Movie"
+            },
+            {
+              "name": "favAnimal",
+              "type": "AMAZON.Animal"
+            }
+          ],
+          "samples": [
+            "i like {favMovie} {favAnimal} and {favColor}",
+            "my favorite things are {favMovie} {favAnimal} and {favColor}",
+            "{favMovie} {favAnimal} and {favColor} are my favorite things",
+            "my favorite movie is {favMovie}",
+            "my favorite animal is {favAnimal}",
+            "my favorite movie is {favMovie} and i like {favAnimal}"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "name": "PLANETS",
+          "values": [
+            {
+              "id": "MERCURY",
+              "name": {
+                "value": "Mercury",
+                "synonyms": [
+                  "the first planet",
+                  "the one closest to the sun",
+                  "the swift planet"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "dialog": {
+      "delegationStrategy": "ALWAYS",
+      "intents": [
+        {
+          "name": "FavoriteThingsIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirmation.FavoriteThingsIntent"
+          },
+          "slots": [
+            {
+              "name": "favColor",
+              "type": "AMAZON.Color",
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Slot.Elicit.FavoriteThingsIntent.FavColor"
+              }
+            },
+            {
+              "name": "favMovie",
+              "type": "AMAZON.Movie",
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Slot.Elicit.FavoriteThingsIntent.FavMovie"
+              }
+            },
+            {
+              "name": "favAnimal",
+              "type": "AMAZON.Animal",
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Slot.Elicit.FavoriteThingsIntent.FavAnimal"
+              }, 
+              "validation": [
+                {
+                  "type": "isNotInSet",
+                  "prompt": "Slot.Validation.FavAnimal",
+                  "values": [
+                    "horse"
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "prompts": [
+      {
+        "id": "Slot.Elicit.FavoriteThingsIntent.FavColor",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is your favorite color?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What color is your favorite?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Elicit.FavoriteThingsIntent.FavMovie",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is your favorite movie?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What movie is your favorite?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Elicit.FavoriteThingsIntent.FavAnimal",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is your favorite animal?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What animal is your favorite?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Validation.FavAnimal",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Not a horse. I don't like horses. Pick another animal!"
+          }
+        ]
+      },
+      {
+        "id": "Confirmation.FavoriteThingsIntent",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Are you sure that you like {favAnimal}, {favColor}, {favMovie}?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "1"
+}
