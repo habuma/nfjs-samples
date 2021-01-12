@@ -1,0 +1,29 @@
+logging:
+  level:
+    habuma: debug
+    org.springframework.web: error
+    
+greeting:
+  message: Hello Spring Boot Workshop!
+  
+info:
+  contact:
+    phone: 123-123-1234
+    email: support@example.com
+  greeting: ${greeting.message}
+  
+management:
+  info:
+    git:
+      mode: full
+      
+  endpoint:
+    health:
+      show-details: always
+
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude:
+        - heapdump
