@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: Books
+  
+greeting:
+  message: Hello from YAML
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+
+  endpoint:
+    health:
+      show-details: always

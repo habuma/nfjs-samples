@@ -1,0 +1,63 @@
+server:
+  port: 9999
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - health
+        - info
+        - gateway
+        - metrics
+  
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: google
+        uri: https://google.com
+        predicates:
+        - Path=/googs
+        filters:
+        - RewritePath=.*,/
+      - id: hello
+        uri: lb://hello-service
+        predicates:
+        - Path=/hello
+        filters:
+        - AddRequestHeader=X-MyGateway, NFJS-Virtual-2021
+        - AddResponseHeader=X-MyGatewayResponse, NFJS-Virtual-2021
+      - id: hola
+        uri: lb://hello-service
+        predicates:
+        - Path=/adios
+        - Weight=group1, 5
+        filters:
+        - RewritePath=/adios,/hello
+      - id: streamer
+        uri: http://localhost:8080
+        predicates:
+        - Path=/stream
+      - id: adios
+        uri: lb://hello-service
+        predicates:
+        - Path=/adios
+        - Weight=group1, 5
+        filters:
+        - RewritePath=/adios,/goodbye
+      - id: bye
+        uri: lb://hello-service
+        predicates:
+        - Path=/goodbye
+        filters:
+        - name: RequestRateLimiter
+          args:
+            redis-rate-limiter:
+              burst-capacity: 2
+              replenish-rate: 2
+            key-resolver: '#{@userKeyResolver}'
+      - id: echo
+        uri: ws://localhost:9000
+        predicates:
+        - Path=/echo
