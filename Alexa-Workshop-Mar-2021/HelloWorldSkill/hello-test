@@ -1,0 +1,9 @@
+{
+  "skillId": "amzn1.ask.skill.667bcca3-0eaa-4af7-ad64-38177df40ecb",
+  "locale": "en-US",
+  "type": "text",
+  "userInput": [
+    "open hello workshop",
+    "hello"
+  ]
+}

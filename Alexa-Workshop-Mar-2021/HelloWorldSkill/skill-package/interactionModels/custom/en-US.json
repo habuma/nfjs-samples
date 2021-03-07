@@ -1,0 +1,217 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "hello workshop",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "FavoriteColorIntent",
+          "slots": [
+            {
+              "name": "favColor",
+              "type": "AMAZON.Color"
+            }
+          ],
+          "samples": [
+            "my favorite color is {favColor}",
+            "{favColor} is my favorite color",
+            "i like {favColor}"
+          ]
+        },
+        {
+          "name": "FavoritePlanetIntent",
+          "slots": [
+            {
+              "name": "favPlanet",
+              "type": "PLANETS"
+            }
+          ],
+          "samples": [
+            "my favorite planet is {favPlanet}",
+            "{favPlanet} is my favorite planet",
+            "i like {favPlanet}"
+          ]
+        },
+
+
+
+        {
+          "name": "ScheduleTripIntent",
+          "slots": [
+            {
+              "name": "destination",
+              "type": "AMAZON.US_CITY"
+            },
+            {
+              "name": "departureDate",
+              "type": "AMAZON.DATE"
+            },
+            {
+              "name": "returnDate",
+              "type": "AMAZON.DATE"
+            }
+          ],
+          "samples": [
+            "i want to go to {destination}",
+            "schedule a trip to {destination}",
+            "plan a trip to {destination} starting {departureDate} and ending {returnDate}",
+            "book a trip to {destination} leaving {departureDate} and returning {returnDate}"
+          ]
+        },
+
+
+
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello"
+          ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "types": [
+        {
+          "name": "PLANETS",
+          "values": [
+            {
+              "id": "MERCURY",
+              "name": {
+                "value": "Mercury",
+                "synonyms": [
+                  "the first planet",
+                  "the one closest to the sun",
+                  "the swift planet"
+                ]
+              }
+            },
+            {
+              "id": "MARS",
+              "name": {
+                "value": "Mars",
+                "synonyms": [
+                  "the red planet"
+                ]
+              }
+            },
+            {
+              "id": "JUPITER",
+              "name": {
+                "value": "Jupiter",
+                "synonyms": [
+                  "the biggest planet",
+                  "the one with an eye"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "dialog": {
+      "delegationStrategy": "ALWAYS",
+      "confirmationRequired": true,
+      "prompts": {
+        "confirmation": "Confirmation.ScheduleTripIntent"
+      },
+      "intents": [
+        {
+          "name": "ScheduleTripIntent",
+          "slots": [
+            {
+              "name": "destination",
+              "elicitationRequired": true,
+              "type": "AMAZON.US_CITY",
+              "prompts": {
+                "elicitation": "Slot.Elicit.ScheduleTripIntent.Destination"
+              }
+            },
+            {
+              "name": "departureDate",
+              "elicitationRequired": true,
+              "type": "AMAZON.DATE",
+              "prompts": {
+                "elicitation": "Slot.Elicit.ScheduleTripIntent.DepartureDate"
+              }
+            },
+            {
+              "name": "returnDate",
+              "elicitationRequired": true,
+              "type": "AMAZON.DATE",
+              "prompts": {
+                "elicitation": "Slot.Elicit.ScheduleTripIntent.ReturnDate"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prompts": [
+      {
+        "id": "Slot.Elicit.ScheduleTripIntent.Destination",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Where do you want to go?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What city would you like to visit?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Where will this trip take you?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Elicit.ScheduleTripIntent.DepartureDate",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "When will your trip start?"
+          }
+        ]
+      },
+      {
+        "id": "Slot.Elicit.ScheduleTripIntent.ReturnDate",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "When will your trip end?"
+          }
+        ]
+      },
+      {
+        "id": "Confirmation.ScheduleTripIntent",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "I've got you down for a trip to {destination}, between {departureDate} and {returnDate}. Is that correct?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "1"
+}
