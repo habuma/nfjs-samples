@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: hello-config-map
+data:
+  greeting.message: Hello Kubernetes!
+  favorite.color: Blue
+  hometown.name: Jal

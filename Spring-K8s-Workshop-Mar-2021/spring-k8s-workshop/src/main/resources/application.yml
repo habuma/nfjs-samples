@@ -1,0 +1,11 @@
+server:
+  shutdown: graceful
+
+greeting:
+  message: Hello from Spring!
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'

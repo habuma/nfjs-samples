@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: k8s-workshop
+  name: k8s-workshop
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-workshop
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: k8s-workshop
+    spec:
+      containers:
+      - image: habuma/k8s-workshop:latest
+        name: k8s-workshop
+        resources: {}
+status: {}

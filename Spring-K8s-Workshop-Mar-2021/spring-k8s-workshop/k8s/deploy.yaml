@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-workshop
+  labels:
+    app: k8s-workshop
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: k8s-workshop
+  template: 
+    metadata:
+      labels:
+        app: k8s-workshop
+    spec:
+      containers:
+      - name: k8s-workshop
+        image: habuma/k8s-workshop:latest
+        env:
+        - name: SPRING_CONFIG_IMPORT
+          value: "configtree:/etc/config/"
+        livenessProbe:
+          initialDelaySeconds: 2
+          periodSeconds: 5
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8080
+        readinessProbe:
+          initialDelaySeconds: 2
+          periodSeconds: 5
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8080
+        volumeMounts:
+        - name: hello-config
+          mountPath: /etc/config/
+      volumes:
+      - name: hello-config
+        configMap:
+          name: hello-config-map
