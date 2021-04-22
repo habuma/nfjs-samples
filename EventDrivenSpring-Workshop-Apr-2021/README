@@ -1,1 +1,36 @@
-This is a placeholder directory for Event Driven Spring Workshop (April 2021) files.
+= Event Driven Spring Workshop - April 22, 2021
+
+This folder contains the code written during the Event-Driven Spring
+Workshop held on April 22, 2021. It also has the slides that preceeded
+the hands-on portion of the workshop.
+
+A few notes to those who were in attendance:
+
+First, I was tempted to introduce Lombok after the workshop to get (if
+nothing else) a good toString() method on TripBooking and Itinerary. But
+I chose not to so that you should still be able to load this code into
+your IDE of choice without installing the Lombok plugin.
+
+Instead, I did add in one instance of Itinerary a toString() method that
+makes use of Spring's own ToStringCreator utility to create toString()
+responses. Specifically, the Itinerary in scs-trip-sink is where you'll
+find that.
+
+Which, by the way, notice that there is now an scs-trip-sink project. This
+was the one last bit that we didn't get to before running into the issue we
+had between scs-trip-source and scs-trip-processor. Once I sorted out that
+issue, I went ahead and added the scs-trip-sink project to complete the
+story.
+
+And, speaking of that issue...I had said that maybe it was a problem with
+the source project and not the processor project. Turns out I was correct.
+When I added the binding configuration for the source, I accidentally was
+adding it to one of the Spring Integration examples. Consequently, the
+scs-trip-source project didn't have any of that configuration and was
+publishing trips to a default destination different from what the processor
+was trying to pull them from. I fixed that, including removing it from
+the Spring Integration example, and it all works now.
+
+If there are any further questions or you need help, my email is on the
+first slide. I can't promise a quick response, but I'll definitely try to
+help out if I can. Thanks for attending!
