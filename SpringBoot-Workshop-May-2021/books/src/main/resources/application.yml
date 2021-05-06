@@ -1,0 +1,37 @@
+greeting:
+  message: Hiya Spring Boot Workshop!
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude:
+        - heapdump
+
+  endpoint:
+    health:
+      show-details: always
+
+info:
+  contact:
+    phone: 123-123-1234
+    email: support@example.com 
+
+---
+
+spring:
+  profiles: texas
+  
+greeting:
+  message: Howdy, y'all!!!
+  
+---
+
+spring:
+  profiles: newmexico
+  
+greeting:
+  message: Hola mis amigos
+  
