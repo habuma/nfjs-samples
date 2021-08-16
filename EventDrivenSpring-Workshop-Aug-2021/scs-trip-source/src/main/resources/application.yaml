@@ -1,0 +1,7 @@
+spring:
+  cloud:
+    stream: 
+      bindings:
+        sendTrip-out-0:
+          destination: trips
+          group: starport75

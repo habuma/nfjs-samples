@@ -1,1 +1,20 @@
-Placeholder directory for Event Driven Workshop - August 2021
+= Event Driven Spring Workshop - August 16, 2021
+
+This folder contains the code written during the Event-Driven Spring
+Workshop held on August 16, 2021. It also has the slides that preceeded
+the hands-on portion of the workshop.
+
+A few notes to those who were in attendance:
+
+We had a few misfires during the workshop, requiring me to step back and rely
+on previously-created code. That was unfortunate, but the only option if we
+were to avoid getting bogged down in a lengthy debugging session.
+
+Therefore, rather than hand you code written during today's workshop, I am
+simply copying in the code from the (much more successful) April workshop.
+If there is anything missing or that requires further explanation, by all
+means, email me and I'll help you sort it out.
+
+If there are any further questions or you need help, my email is on the
+first slide. I can't promise a quick response, but I'll definitely try to
+help out if I can. Thanks for attending!
