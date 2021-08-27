@@ -1,0 +1,17 @@
+apiVersion: skaffold/v2beta21
+kind: Config
+metadata:
+  name: hello-kubernetes
+build:
+  artifacts:
+  - image: habuma/hello-k8s
+    buildpacks:
+      builder: gcr.io/buildpacks/builder:v1
+      dependencies:
+        paths:
+        - src/main
+        - pom.xml
+deploy:
+  kubectl:
+    manifests:
+    - k8s/deploy.yaml

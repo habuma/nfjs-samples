@@ -1,1 +1,29 @@
-This is just a placeholder directory. The real stuff will be here later...
+# Kontain Your Spring Workshop (8/27/2021)
+
+These are the project files for the Spring example given during the "Kontain Your Spring" workshop given on 8/27/2021.
+
+The cheatsheet that I worked from when giving the workshop is in the KontainYourSpringCheatsheet.pdf file. It's a bit rough around the edges, but you should be able to follow along and run through the exercises using this document, especially if you actually attended the workshop and have the context given there.
+
+I still haven't had a chance to sort out the liveness/readiness bit that I attempted to demo at the end, but wanted to get the code out ASAP and can then revisit it later when I have more time.
+
+Finally, for those who asked, the Maven/Gradle configuration for the Spring Boot build plugins to use the build artifact's name and version is as follows:
+
+Maven:
+----
+<plugin>
+ <groupId>org.springframework.boot</groupId>
+ <artifactId>spring-boot-maven-plugin</artifactId>
+ <configuration>
+   <image>
+     <name>tacocloud/${project.artifactId}:${project.version}</name>
+   </image>
+ </configuration>
+</plugin>
+----
+
+Gradle:
+----
+bootBuildImage {
+  imageName = "habuma/${rootProject.name}:${version}"
+}
+----

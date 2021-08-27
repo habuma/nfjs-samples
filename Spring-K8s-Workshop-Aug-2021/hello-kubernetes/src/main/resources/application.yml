@@ -1,0 +1,5 @@
+greeting:
+  message: Hello world!
+  
+server:
+  shutdown: graceful
