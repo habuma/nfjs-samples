@@ -1,0 +1,11 @@
+This Alexa skill project was originally created as an Alexa-hosted skill.
+That means, among other things, that deployment involves doing a Git
+commit/push to an Amazon-hosted Git repository.
+
+Although I have access and rights to push this code to deployment, you
+will not. Therefore, I've removed the Git details from the project. If
+you want to deploy this code for yourself, perhaps the best way is to
+create your own Alexa-hosted skill (using `ask new`) and then copy the
+`lambda/` and `skill-package/` folders from this project over the ones
+in the Alexa-hosted skill that you created. And then, deploy your skill
+using `git commit` and `git push`.

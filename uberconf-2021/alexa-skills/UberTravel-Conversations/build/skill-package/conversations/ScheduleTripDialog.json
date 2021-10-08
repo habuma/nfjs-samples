@@ -1,0 +1,1541 @@
+{
+  "schema": "https://amazonalexa.com/ask/2020/12/Module",
+  "exports": [
+    "com.ubertravel.AffirmEvent",
+    "com.ubertravel.InformStartDateEvent",
+    "com.ubertravel.InformTripLengthEvent",
+    "com.ubertravel.InformDestinationEvent",
+    "com.ubertravel.ScheduleTripEvent",
+    "com.ubertravel.TripDetails",
+    "com.ubertravel.ScheduleTripResult",
+    "com.ubertravel.TripDestination",
+    "com.ubertravel.ResponsePayload",
+    "com.ubertravel.TripStartDate",
+    "com.ubertravel.TripLength",
+    "com.ubertravel.scheduleTrip",
+    "com.ubertravel.ScheduleTripDialog"
+  ],
+  "expressions": [
+    {
+      "kind": "QualifiedNameDeclaration",
+      "name": "com.ubertravel.AffirmEvent",
+      "type": {
+        "kind": "TypeReference",
+        "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+        "arguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.amazon.alexa.schema.Thing"
+          }
+        ]
+      },
+      "expression": {
+        "kind": "Call",
+        "name": "com.amazon.alexa.ask.conversations.utterances",
+        "genericArguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.amazon.alexa.schema.Thing"
+          }
+        ],
+        "arguments": {
+          "samples": {
+            "kind": "Call",
+            "name": "com.amazon.alexa.schema.List",
+            "genericArguments": [
+              {
+                "kind": "TypeReference",
+                "name": "com.amazon.alexa.schema.String"
+              }
+            ],
+            "arguments": [
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "exactly",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "yeah I'd like that",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "you got it",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "yup",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "correct",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "that's right",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "yeah",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "yep",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "yes",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "make it so",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              }
+            ],
+            "type": {
+              "kind": "TypeReference",
+              "name": "com.amazon.alexa.schema.List",
+              "arguments": [
+                {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              ]
+            }
+          }
+        },
+        "type": {
+          "kind": "TypeReference",
+          "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+          "arguments": [
+            {
+              "kind": "TypeReference",
+              "name": "com.amazon.alexa.schema.Thing"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "QualifiedNameDeclaration",
+      "name": "com.ubertravel.InformStartDateEvent",
+      "type": {
+        "kind": "TypeReference",
+        "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+        "arguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.ubertravel.TripStartDate"
+          }
+        ]
+      },
+      "expression": {
+        "kind": "Call",
+        "name": "com.amazon.alexa.ask.conversations.utterances",
+        "genericArguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.ubertravel.TripStartDate"
+          }
+        ],
+        "arguments": {
+          "samples": {
+            "kind": "Call",
+            "name": "com.amazon.alexa.schema.List",
+            "genericArguments": [
+              {
+                "kind": "TypeReference",
+                "name": "com.amazon.alexa.schema.String"
+              }
+            ],
+            "arguments": [
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "{startDate}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "I want my trip to start {startDate}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "I want to depart {startDate}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "I want to leave on {startDate}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              }
+            ],
+            "type": {
+              "kind": "TypeReference",
+              "name": "com.amazon.alexa.schema.List",
+              "arguments": [
+                {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              ]
+            }
+          }
+        },
+        "type": {
+          "kind": "TypeReference",
+          "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+          "arguments": [
+            {
+              "kind": "TypeReference",
+              "name": "com.ubertravel.TripStartDate"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "QualifiedNameDeclaration",
+      "name": "com.ubertravel.InformTripLengthEvent",
+      "type": {
+        "kind": "TypeReference",
+        "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+        "arguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.ubertravel.TripLength"
+          }
+        ]
+      },
+      "expression": {
+        "kind": "Call",
+        "name": "com.amazon.alexa.ask.conversations.utterances",
+        "genericArguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.ubertravel.TripLength"
+          }
+        ],
+        "arguments": {
+          "samples": {
+            "kind": "Call",
+            "name": "com.amazon.alexa.schema.List",
+            "genericArguments": [
+              {
+                "kind": "TypeReference",
+                "name": "com.amazon.alexa.schema.String"
+              }
+            ],
+            "arguments": [
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "{tripLength}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "{tripLength} days",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "I want my trip to last {tripLength} days",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "I want to return after {tripLength} days",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              }
+            ],
+            "type": {
+              "kind": "TypeReference",
+              "name": "com.amazon.alexa.schema.List",
+              "arguments": [
+                {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              ]
+            }
+          }
+        },
+        "type": {
+          "kind": "TypeReference",
+          "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+          "arguments": [
+            {
+              "kind": "TypeReference",
+              "name": "com.ubertravel.TripLength"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "QualifiedNameDeclaration",
+      "name": "com.ubertravel.InformDestinationEvent",
+      "type": {
+        "kind": "TypeReference",
+        "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+        "arguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.ubertravel.TripDestination"
+          }
+        ]
+      },
+      "expression": {
+        "kind": "Call",
+        "name": "com.amazon.alexa.ask.conversations.utterances",
+        "genericArguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.ubertravel.TripDestination"
+          }
+        ],
+        "arguments": {
+          "samples": {
+            "kind": "Call",
+            "name": "com.amazon.alexa.schema.List",
+            "genericArguments": [
+              {
+                "kind": "TypeReference",
+                "name": "com.amazon.alexa.schema.String"
+              }
+            ],
+            "arguments": [
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "{destination}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "I want to go to {destination}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "{destination} sounds nice",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "I want to visit {destination}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              }
+            ],
+            "type": {
+              "kind": "TypeReference",
+              "name": "com.amazon.alexa.schema.List",
+              "arguments": [
+                {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              ]
+            }
+          }
+        },
+        "type": {
+          "kind": "TypeReference",
+          "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+          "arguments": [
+            {
+              "kind": "TypeReference",
+              "name": "com.ubertravel.TripDestination"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "QualifiedNameDeclaration",
+      "name": "com.ubertravel.ScheduleTripEvent",
+      "type": {
+        "kind": "TypeReference",
+        "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+        "arguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.ubertravel.TripDetails"
+          }
+        ]
+      },
+      "expression": {
+        "kind": "Call",
+        "name": "com.amazon.alexa.ask.conversations.utterances",
+        "genericArguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.ubertravel.TripDetails"
+          }
+        ],
+        "arguments": {
+          "samples": {
+            "kind": "Call",
+            "name": "com.amazon.alexa.schema.List",
+            "genericArguments": [
+              {
+                "kind": "TypeReference",
+                "name": "com.amazon.alexa.schema.String"
+              }
+            ],
+            "arguments": [
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "plan a trip",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "schedule a trip to {destination}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "book a trip to {destination}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "i want to go to {destination}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "schedule a trip to {destination} starting {startDate}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "plan a trip to {destination} between {startDate} for {tripLength} days",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "schedule a trip to {destination} starting {startDate} for {tripLength} days",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              }
+            ],
+            "type": {
+              "kind": "TypeReference",
+              "name": "com.amazon.alexa.schema.List",
+              "arguments": [
+                {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              ]
+            }
+          }
+        },
+        "type": {
+          "kind": "TypeReference",
+          "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+          "arguments": [
+            {
+              "kind": "TypeReference",
+              "name": "com.ubertravel.TripDetails"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "TypeDeclaration",
+      "name": "com.ubertravel.TripDetails",
+      "properties": [
+        {
+          "name": "destination",
+          "type": {
+            "kind": "TypeReference",
+            "name": "com.amazon.ask.types.builtins.AMAZON.City"
+          },
+          "optional": true
+        },
+        {
+          "name": "startDate",
+          "type": {
+            "kind": "TypeReference",
+            "name": "com.amazon.ask.types.builtins.AMAZON.DATE"
+          },
+          "optional": true
+        },
+        {
+          "name": "tripLength",
+          "type": {
+            "kind": "TypeReference",
+            "name": "com.amazon.ask.types.builtins.AMAZON.NUMBER"
+          },
+          "optional": true
+        }
+      ]
+    },
+    {
+      "kind": "TypeDeclaration",
+      "name": "com.ubertravel.ScheduleTripResult",
+      "properties": [
+        {
+          "name": "destination",
+          "type": {
+            "kind": "TypeReference",
+            "name": "com.amazon.ask.types.builtins.AMAZON.City"
+          },
+          "optional": false
+        }
+      ]
+    },
+    {
+      "kind": "TypeDeclaration",
+      "name": "com.ubertravel.TripDestination",
+      "properties": [
+        {
+          "name": "destination",
+          "type": {
+            "kind": "TypeReference",
+            "name": "com.amazon.ask.types.builtins.AMAZON.City"
+          },
+          "optional": false
+        }
+      ]
+    },
+    {
+      "kind": "TypeDeclaration",
+      "name": "com.ubertravel.ResponsePayload",
+      "properties": [
+        {
+          "name": "scheduleTripResult",
+          "type": {
+            "kind": "TypeReference",
+            "name": "com.ubertravel.ScheduleTripResult"
+          },
+          "optional": false
+        }
+      ]
+    },
+    {
+      "kind": "TypeDeclaration",
+      "name": "com.ubertravel.TripStartDate",
+      "properties": [
+        {
+          "name": "startDate",
+          "type": {
+            "kind": "TypeReference",
+            "name": "com.amazon.ask.types.builtins.AMAZON.DATE"
+          },
+          "optional": false
+        }
+      ]
+    },
+    {
+      "kind": "TypeDeclaration",
+      "name": "com.ubertravel.TripLength",
+      "properties": [
+        {
+          "name": "tripLength",
+          "type": {
+            "kind": "TypeReference",
+            "name": "com.amazon.ask.types.builtins.AMAZON.NUMBER"
+          },
+          "optional": false
+        }
+      ]
+    },
+    {
+      "kind": "ActionDeclaration",
+      "name": "com.ubertravel.scheduleTrip",
+      "arguments": [
+        {
+          "name": "destination",
+          "type": {
+            "kind": "TypeReference",
+            "name": "com.amazon.ask.types.builtins.AMAZON.City"
+          }
+        },
+        {
+          "name": "startDate",
+          "type": {
+            "kind": "TypeReference",
+            "name": "com.amazon.ask.types.builtins.AMAZON.DATE"
+          }
+        },
+        {
+          "name": "tripLength",
+          "type": {
+            "kind": "TypeReference",
+            "name": "com.amazon.ask.types.builtins.AMAZON.NUMBER"
+          }
+        }
+      ],
+      "returnType": {
+        "kind": "TypeReference",
+        "name": "com.ubertravel.ScheduleTripResult"
+      }
+    },
+    {
+      "kind": "DialogDeclaration",
+      "name": "com.ubertravel.ScheduleTripDialog",
+      "returnType": {
+        "kind": "TypeReference",
+        "name": "com.amazon.alexa.schema.Nothing"
+      },
+      "samples": [
+        {
+          "kind": "Sample",
+          "expressions": [
+            {
+              "kind": "NameDeclaration",
+              "name": "scheduleTripRequest",
+              "type": {
+                "kind": "TypeReference",
+                "name": "com.ubertravel.TripDetails"
+              },
+              "expression": {
+                "kind": "Call",
+                "name": "com.amazon.alexa.ask.conversations.expect",
+                "genericArguments": [
+                  {
+                    "kind": "TypeReference",
+                    "name": "com.ubertravel.TripDetails"
+                  }
+                ],
+                "arguments": {
+                  "act": {
+                    "kind": "NameReference",
+                    "name": "com.amazon.alexa.ask.conversations.Invoke",
+                    "type": {
+                      "kind": "TypeReference",
+                      "name": "com.amazon.alexa.ask.conversations.Type",
+                      "arguments": [
+                        {
+                          "kind": "TypeReference",
+                          "name": "com.amazon.alexa.ask.conversations.Invoke"
+                        }
+                      ]
+                    }
+                  },
+                  "event": {
+                    "kind": "NameReference",
+                    "name": "com.ubertravel.ScheduleTripEvent",
+                    "type": {
+                      "kind": "TypeReference",
+                      "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+                      "arguments": [
+                        {
+                          "kind": "TypeReference",
+                          "name": "com.ubertravel.TripDetails"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.ubertravel.TripDetails"
+                }
+              }
+            },
+            {
+              "kind": "Call",
+              "name": "com.amazon.alexa.ask.conversations.response",
+              "genericArguments": [
+                {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.Thing"
+                }
+              ],
+              "arguments": {
+                "response": {
+                  "kind": "NameReference",
+                  "name": "prompts.request_destination_apla",
+                  "type": {
+                    "kind": "TypeReference",
+                    "name": "com.amazon.alexa.ask.conversations.APLA",
+                    "arguments": [
+                      {
+                        "kind": "TypeReference",
+                        "name": "com.amazon.alexa.schema.Thing"
+                      }
+                    ]
+                  }
+                },
+                "act": {
+                  "kind": "Call",
+                  "name": "com.amazon.alexa.ask.conversations.Request",
+                  "arguments": {
+                    "arguments": {
+                      "kind": "Call",
+                      "name": "com.amazon.alexa.schema.List",
+                      "genericArguments": [
+                        {
+                          "kind": "TypeReference",
+                          "name": "com.amazon.alexa.ask.conversations.Argument",
+                          "arguments": [
+                            {
+                              "kind": "TypeReference",
+                              "name": "com.amazon.alexa.schema.Thing"
+                            }
+                          ]
+                        }
+                      ],
+                      "arguments": [
+                        {
+                          "kind": "PropertyReference",
+                          "name": "destination",
+                          "expression": {
+                            "kind": "PropertyReference",
+                            "name": "arguments",
+                            "expression": {
+                              "kind": "NameReference",
+                              "name": "com.ubertravel.scheduleTrip",
+                              "type": {
+                                "kind": "TypeReference",
+                                "name": "com.ubertravel.scheduleTrip"
+                              }
+                            },
+                            "type": {
+                              "kind": "TypeReference",
+                              "name": "com.amazon.alexa.ask.conversations.Arguments",
+                              "arguments": [
+                                {
+                                  "kind": "TypeReference",
+                                  "name": "com.ubertravel.scheduleTrip"
+                                }
+                              ]
+                            }
+                          },
+                          "type": {
+                            "kind": "TypeReference",
+                            "name": "com.amazon.alexa.ask.conversations.Argument",
+                            "arguments": [
+                              {
+                                "kind": "TypeReference",
+                                "name": "com.amazon.ask.types.builtins.AMAZON.City"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "type": {
+                        "kind": "TypeReference",
+                        "name": "com.amazon.alexa.schema.List",
+                        "arguments": [
+                          {
+                            "kind": "TypeReference",
+                            "name": "com.amazon.alexa.ask.conversations.Argument",
+                            "arguments": [
+                              {
+                                "kind": "TypeReference",
+                                "name": "com.amazon.alexa.schema.Thing"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "type": {
+                    "kind": "TypeReference",
+                    "name": "com.amazon.alexa.ask.conversations.Request"
+                  }
+                }
+              },
+              "type": {
+                "kind": "TypeReference",
+                "name": "com.amazon.alexa.schema.Nothing"
+              }
+            },
+            {
+              "kind": "NameDeclaration",
+              "name": "destination",
+              "type": {
+                "kind": "TypeReference",
+                "name": "com.ubertravel.TripDestination"
+              },
+              "expression": {
+                "kind": "Call",
+                "name": "com.amazon.alexa.ask.conversations.expect",
+                "genericArguments": [
+                  {
+                    "kind": "TypeReference",
+                    "name": "com.ubertravel.TripDestination"
+                  }
+                ],
+                "arguments": {
+                  "act": {
+                    "kind": "NameReference",
+                    "name": "com.amazon.alexa.ask.conversations.Inform",
+                    "type": {
+                      "kind": "TypeReference",
+                      "name": "com.amazon.alexa.ask.conversations.Type",
+                      "arguments": [
+                        {
+                          "kind": "TypeReference",
+                          "name": "com.amazon.alexa.ask.conversations.Inform"
+                        }
+                      ]
+                    }
+                  },
+                  "event": {
+                    "kind": "NameReference",
+                    "name": "com.ubertravel.InformDestinationEvent",
+                    "type": {
+                      "kind": "TypeReference",
+                      "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+                      "arguments": [
+                        {
+                          "kind": "TypeReference",
+                          "name": "com.ubertravel.TripDestination"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.ubertravel.TripDestination"
+                }
+              }
+            },
+            {
+              "kind": "Call",
+              "name": "com.amazon.alexa.ask.conversations.response",
+              "genericArguments": [
+                {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.Thing"
+                }
+              ],
+              "arguments": {
+                "response": {
+                  "kind": "NameReference",
+                  "name": "prompts.request_startDate_apla",
+                  "type": {
+                    "kind": "TypeReference",
+                    "name": "com.amazon.alexa.ask.conversations.APLA",
+                    "arguments": [
+                      {
+                        "kind": "TypeReference",
+                        "name": "com.amazon.alexa.schema.Thing"
+                      }
+                    ]
+                  }
+                },
+                "act": {
+                  "kind": "Call",
+                  "name": "com.amazon.alexa.ask.conversations.Request",
+                  "arguments": {
+                    "arguments": {
+                      "kind": "Call",
+                      "name": "com.amazon.alexa.schema.List",
+                      "genericArguments": [
+                        {
+                          "kind": "TypeReference",
+                          "name": "com.amazon.alexa.ask.conversations.Argument",
+                          "arguments": [
+                            {
+                              "kind": "TypeReference",
+                              "name": "com.amazon.alexa.schema.Thing"
+                            }
+                          ]
+                        }
+                      ],
+                      "arguments": [
+                        {
+                          "kind": "PropertyReference",
+                          "name": "startDate",
+                          "expression": {
+                            "kind": "PropertyReference",
+                            "name": "arguments",
+                            "expression": {
+                              "kind": "NameReference",
+                              "name": "com.ubertravel.scheduleTrip",
+                              "type": {
+                                "kind": "TypeReference",
+                                "name": "com.ubertravel.scheduleTrip"
+                              }
+                            },
+                            "type": {
+                              "kind": "TypeReference",
+                              "name": "com.amazon.alexa.ask.conversations.Arguments",
+                              "arguments": [
+                                {
+                                  "kind": "TypeReference",
+                                  "name": "com.ubertravel.scheduleTrip"
+                                }
+                              ]
+                            }
+                          },
+                          "type": {
+                            "kind": "TypeReference",
+                            "name": "com.amazon.alexa.ask.conversations.Argument",
+                            "arguments": [
+                              {
+                                "kind": "TypeReference",
+                                "name": "com.amazon.ask.types.builtins.AMAZON.DATE"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "type": {
+                        "kind": "TypeReference",
+                        "name": "com.amazon.alexa.schema.List",
+                        "arguments": [
+                          {
+                            "kind": "TypeReference",
+                            "name": "com.amazon.alexa.ask.conversations.Argument",
+                            "arguments": [
+                              {
+                                "kind": "TypeReference",
+                                "name": "com.amazon.alexa.schema.Thing"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "type": {
+                    "kind": "TypeReference",
+                    "name": "com.amazon.alexa.ask.conversations.Request"
+                  }
+                }
+              },
+              "type": {
+                "kind": "TypeReference",
+                "name": "com.amazon.alexa.schema.Nothing"
+              }
+            },
+            {
+              "kind": "NameDeclaration",
+              "name": "startDate",
+              "type": {
+                "kind": "TypeReference",
+                "name": "com.ubertravel.TripStartDate"
+              },
+              "expression": {
+                "kind": "Call",
+                "name": "com.amazon.alexa.ask.conversations.expect",
+                "genericArguments": [
+                  {
+                    "kind": "TypeReference",
+                    "name": "com.ubertravel.TripStartDate"
+                  }
+                ],
+                "arguments": {
+                  "act": {
+                    "kind": "NameReference",
+                    "name": "com.amazon.alexa.ask.conversations.Inform",
+                    "type": {
+                      "kind": "TypeReference",
+                      "name": "com.amazon.alexa.ask.conversations.Type",
+                      "arguments": [
+                        {
+                          "kind": "TypeReference",
+                          "name": "com.amazon.alexa.ask.conversations.Inform"
+                        }
+                      ]
+                    }
+                  },
+                  "event": {
+                    "kind": "NameReference",
+                    "name": "com.ubertravel.InformStartDateEvent",
+                    "type": {
+                      "kind": "TypeReference",
+                      "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+                      "arguments": [
+                        {
+                          "kind": "TypeReference",
+                          "name": "com.ubertravel.TripStartDate"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.ubertravel.TripStartDate"
+                }
+              }
+            },
+            {
+              "kind": "Call",
+              "name": "com.amazon.alexa.ask.conversations.response",
+              "genericArguments": [
+                {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.Thing"
+                }
+              ],
+              "arguments": {
+                "response": {
+                  "kind": "NameReference",
+                  "name": "prompts.request_tripLength_apla",
+                  "type": {
+                    "kind": "TypeReference",
+                    "name": "com.amazon.alexa.ask.conversations.APLA",
+                    "arguments": [
+                      {
+                        "kind": "TypeReference",
+                        "name": "com.amazon.alexa.schema.Thing"
+                      }
+                    ]
+                  }
+                },
+                "act": {
+                  "kind": "Call",
+                  "name": "com.amazon.alexa.ask.conversations.Request",
+                  "arguments": {
+                    "arguments": {
+                      "kind": "Call",
+                      "name": "com.amazon.alexa.schema.List",
+                      "genericArguments": [
+                        {
+                          "kind": "TypeReference",
+                          "name": "com.amazon.alexa.ask.conversations.Argument",
+                          "arguments": [
+                            {
+                              "kind": "TypeReference",
+                              "name": "com.amazon.alexa.schema.Thing"
+                            }
+                          ]
+                        }
+                      ],
+                      "arguments": [
+                        {
+                          "kind": "PropertyReference",
+                          "name": "tripLength",
+                          "expression": {
+                            "kind": "PropertyReference",
+                            "name": "arguments",
+                            "expression": {
+                              "kind": "NameReference",
+                              "name": "com.ubertravel.scheduleTrip",
+                              "type": {
+                                "kind": "TypeReference",
+                                "name": "com.ubertravel.scheduleTrip"
+                              }
+                            },
+                            "type": {
+                              "kind": "TypeReference",
+                              "name": "com.amazon.alexa.ask.conversations.Arguments",
+                              "arguments": [
+                                {
+                                  "kind": "TypeReference",
+                                  "name": "com.ubertravel.scheduleTrip"
+                                }
+                              ]
+                            }
+                          },
+                          "type": {
+                            "kind": "TypeReference",
+                            "name": "com.amazon.alexa.ask.conversations.Argument",
+                            "arguments": [
+                              {
+                                "kind": "TypeReference",
+                                "name": "com.amazon.ask.types.builtins.AMAZON.NUMBER"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "type": {
+                        "kind": "TypeReference",
+                        "name": "com.amazon.alexa.schema.List",
+                        "arguments": [
+                          {
+                            "kind": "TypeReference",
+                            "name": "com.amazon.alexa.ask.conversations.Argument",
+                            "arguments": [
+                              {
+                                "kind": "TypeReference",
+                                "name": "com.amazon.alexa.schema.Thing"
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  "type": {
+                    "kind": "TypeReference",
+                    "name": "com.amazon.alexa.ask.conversations.Request"
+                  }
+                }
+              },
+              "type": {
+                "kind": "TypeReference",
+                "name": "com.amazon.alexa.schema.Nothing"
+              }
+            },
+            {
+              "kind": "NameDeclaration",
+              "name": "tripLength",
+              "type": {
+                "kind": "TypeReference",
+                "name": "com.ubertravel.TripLength"
+              },
+              "expression": {
+                "kind": "Call",
+                "name": "com.amazon.alexa.ask.conversations.expect",
+                "genericArguments": [
+                  {
+                    "kind": "TypeReference",
+                    "name": "com.ubertravel.TripLength"
+                  }
+                ],
+                "arguments": {
+                  "act": {
+                    "kind": "NameReference",
+                    "name": "com.amazon.alexa.ask.conversations.Inform",
+                    "type": {
+                      "kind": "TypeReference",
+                      "name": "com.amazon.alexa.ask.conversations.Type",
+                      "arguments": [
+                        {
+                          "kind": "TypeReference",
+                          "name": "com.amazon.alexa.ask.conversations.Inform"
+                        }
+                      ]
+                    }
+                  },
+                  "event": {
+                    "kind": "NameReference",
+                    "name": "com.ubertravel.InformTripLengthEvent",
+                    "type": {
+                      "kind": "TypeReference",
+                      "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+                      "arguments": [
+                        {
+                          "kind": "TypeReference",
+                          "name": "com.ubertravel.TripLength"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.ubertravel.TripLength"
+                }
+              }
+            },
+            {
+              "kind": "Call",
+              "name": "com.amazon.alexa.ask.conversations.response",
+              "genericArguments": [
+                {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.Thing"
+                }
+              ],
+              "arguments": {
+                "response": {
+                  "kind": "NameReference",
+                  "name": "prompts.confirmTrip_apla",
+                  "type": {
+                    "kind": "TypeReference",
+                    "name": "com.amazon.alexa.ask.conversations.APLA",
+                    "arguments": [
+                      {
+                        "kind": "TypeReference",
+                        "name": "com.amazon.alexa.schema.Thing"
+                      }
+                    ]
+                  }
+                },
+                "act": {
+                  "kind": "Call",
+                  "name": "com.amazon.alexa.ask.conversations.ConfirmAction",
+                  "arguments": {
+                    "actionName": {
+                      "kind": "NameReference",
+                      "name": "com.ubertravel.scheduleTrip",
+                      "type": {
+                        "kind": "TypeReference",
+                        "name": "com.ubertravel.scheduleTrip"
+                      }
+                    }
+                  },
+                  "type": {
+                    "kind": "TypeReference",
+                    "name": "com.amazon.alexa.ask.conversations.ConfirmAction"
+                  }
+                },
+                "payload": {
+                  "kind": "Call",
+                  "name": "com.ubertravel.TripDetails",
+                  "arguments": {
+                    "destination": {
+                      "kind": "PropertyReference",
+                      "name": "destination",
+                      "expression": {
+                        "kind": "NameReference",
+                        "name": "scheduleTripRequest",
+                        "type": {
+                          "kind": "TypeReference",
+                          "name": "com.ubertravel.TripDetails"
+                        }
+                      },
+                      "type": {
+                        "kind": "TypeReference",
+                        "name": "com.amazon.ask.types.builtins.AMAZON.City"
+                      }
+                    },
+                    "startDate": {
+                      "kind": "PropertyReference",
+                      "name": "startDate",
+                      "expression": {
+                        "kind": "NameReference",
+                        "name": "scheduleTripRequest",
+                        "type": {
+                          "kind": "TypeReference",
+                          "name": "com.ubertravel.TripDetails"
+                        }
+                      },
+                      "type": {
+                        "kind": "TypeReference",
+                        "name": "com.amazon.ask.types.builtins.AMAZON.DATE"
+                      }
+                    },
+                    "tripLength": {
+                      "kind": "PropertyReference",
+                      "name": "tripLength",
+                      "expression": {
+                        "kind": "NameReference",
+                        "name": "scheduleTripRequest",
+                        "type": {
+                          "kind": "TypeReference",
+                          "name": "com.ubertravel.TripDetails"
+                        }
+                      },
+                      "type": {
+                        "kind": "TypeReference",
+                        "name": "com.amazon.ask.types.builtins.AMAZON.NUMBER"
+                      }
+                    }
+                  },
+                  "type": {
+                    "kind": "TypeReference",
+                    "name": "com.ubertravel.TripDetails"
+                  }
+                }
+              },
+              "type": {
+                "kind": "TypeReference",
+                "name": "com.amazon.alexa.schema.Nothing"
+              }
+            },
+            {
+              "kind": "Call",
+              "name": "com.amazon.alexa.ask.conversations.expect",
+              "genericArguments": [
+                {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.Thing"
+                }
+              ],
+              "arguments": {
+                "act": {
+                  "kind": "NameReference",
+                  "name": "com.amazon.alexa.ask.conversations.Affirm",
+                  "type": {
+                    "kind": "TypeReference",
+                    "name": "com.amazon.alexa.ask.conversations.Type",
+                    "arguments": [
+                      {
+                        "kind": "TypeReference",
+                        "name": "com.amazon.alexa.ask.conversations.Affirm"
+                      }
+                    ]
+                  }
+                },
+                "event": {
+                  "kind": "NameReference",
+                  "name": "com.ubertravel.AffirmEvent",
+                  "type": {
+                    "kind": "TypeReference",
+                    "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+                    "arguments": [
+                      {
+                        "kind": "TypeReference",
+                        "name": "com.amazon.alexa.schema.Thing"
+                      }
+                    ]
+                  }
+                }
+              },
+              "type": {
+                "kind": "TypeReference",
+                "name": "com.amazon.alexa.schema.Thing"
+              }
+            },
+            {
+              "kind": "NameDeclaration",
+              "name": "scheduleTripResult",
+              "type": {
+                "kind": "TypeReference",
+                "name": "com.ubertravel.ScheduleTripResult"
+              },
+              "expression": {
+                "kind": "Call",
+                "name": "com.ubertravel.scheduleTrip",
+                "arguments": {
+                  "destination": {
+                    "kind": "PropertyReference",
+                    "name": "destination",
+                    "expression": {
+                      "kind": "NameReference",
+                      "name": "scheduleTripRequest",
+                      "type": {
+                        "kind": "TypeReference",
+                        "name": "com.ubertravel.TripDetails"
+                      }
+                    },
+                    "type": {
+                      "kind": "TypeReference",
+                      "name": "com.amazon.ask.types.builtins.AMAZON.City"
+                    }
+                  },
+                  "startDate": {
+                    "kind": "PropertyReference",
+                    "name": "startDate",
+                    "expression": {
+                      "kind": "NameReference",
+                      "name": "scheduleTripRequest",
+                      "type": {
+                        "kind": "TypeReference",
+                        "name": "com.ubertravel.TripDetails"
+                      }
+                    },
+                    "type": {
+                      "kind": "TypeReference",
+                      "name": "com.amazon.ask.types.builtins.AMAZON.DATE"
+                    }
+                  },
+                  "tripLength": {
+                    "kind": "PropertyReference",
+                    "name": "tripLength",
+                    "expression": {
+                      "kind": "NameReference",
+                      "name": "scheduleTripRequest",
+                      "type": {
+                        "kind": "TypeReference",
+                        "name": "com.ubertravel.TripDetails"
+                      }
+                    },
+                    "type": {
+                      "kind": "TypeReference",
+                      "name": "com.amazon.ask.types.builtins.AMAZON.NUMBER"
+                    }
+                  }
+                },
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.ubertravel.ScheduleTripResult"
+                }
+              }
+            },
+            {
+              "kind": "Call",
+              "name": "com.amazon.alexa.ask.conversations.response",
+              "genericArguments": [
+                {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.Thing"
+                }
+              ],
+              "arguments": {
+                "response": {
+                  "kind": "NameReference",
+                  "name": "prompts.scheduleTrip_apla",
+                  "type": {
+                    "kind": "TypeReference",
+                    "name": "com.amazon.alexa.ask.conversations.APLA",
+                    "arguments": [
+                      {
+                        "kind": "TypeReference",
+                        "name": "com.amazon.alexa.schema.Thing"
+                      }
+                    ]
+                  }
+                },
+                "act": {
+                  "kind": "Call",
+                  "name": "com.amazon.alexa.ask.conversations.Notify",
+                  "arguments": {
+                    "actionName": {
+                      "kind": "NameReference",
+                      "name": "com.ubertravel.scheduleTrip",
+                      "type": {
+                        "kind": "TypeReference",
+                        "name": "com.ubertravel.scheduleTrip"
+                      }
+                    }
+                  },
+                  "type": {
+                    "kind": "TypeReference",
+                    "name": "com.amazon.alexa.ask.conversations.Notify"
+                  }
+                },
+                "payload": {
+                  "kind": "Call",
+                  "name": "com.ubertravel.ResponsePayload",
+                  "arguments": {
+                    "scheduleTripResult": {
+                      "kind": "NameReference",
+                      "name": "scheduleTripResult",
+                      "type": {
+                        "kind": "TypeReference",
+                        "name": "com.ubertravel.ScheduleTripResult"
+                      }
+                    }
+                  },
+                  "type": {
+                    "kind": "TypeReference",
+                    "name": "com.ubertravel.ResponsePayload"
+                  }
+                }
+              },
+              "type": {
+                "kind": "TypeReference",
+                "name": "com.amazon.alexa.schema.Nothing"
+              }
+            }
+          ],
+          "type": {
+            "kind": "TypeReference",
+            "name": "com.amazon.alexa.schema.Nothing"
+          }
+        }
+      ]
+    }
+  ]
+}

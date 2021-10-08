@@ -1,0 +1,12 @@
+namespace com.ubertravel.types
+
+import com.amazon.ask.types.builtins.AMAZON.DATE
+import com.amazon.ask.types.builtins.AMAZON.NUMBER
+
+type TripStartDate {
+  DATE startDate
+}
+
+type TripLength {
+  NUMBER tripLength
+}

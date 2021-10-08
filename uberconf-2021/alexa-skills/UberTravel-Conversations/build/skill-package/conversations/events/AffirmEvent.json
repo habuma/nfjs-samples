@@ -1,0 +1,156 @@
+{
+  "schema": "https://amazonalexa.com/ask/2020/12/Module",
+  "exports": [
+    "com.ubertravel.events.AffirmEvent"
+  ],
+  "expressions": [
+    {
+      "kind": "QualifiedNameDeclaration",
+      "name": "com.ubertravel.events.AffirmEvent",
+      "type": {
+        "kind": "TypeReference",
+        "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+        "arguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.amazon.alexa.schema.Thing"
+          }
+        ]
+      },
+      "expression": {
+        "kind": "Call",
+        "name": "com.amazon.alexa.ask.conversations.utterances",
+        "genericArguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.amazon.alexa.schema.Thing"
+          }
+        ],
+        "arguments": {
+          "samples": {
+            "kind": "Call",
+            "name": "com.amazon.alexa.schema.List",
+            "genericArguments": [
+              {
+                "kind": "TypeReference",
+                "name": "com.amazon.alexa.schema.String"
+              }
+            ],
+            "arguments": [
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "exactly",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "yeah I'd like that",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "you got it",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "yup",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "correct",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "that's right",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "yeah",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "yep",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "yes",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "make it so",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              }
+            ],
+            "type": {
+              "kind": "TypeReference",
+              "name": "com.amazon.alexa.schema.List",
+              "arguments": [
+                {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              ]
+            }
+          }
+        },
+        "type": {
+          "kind": "TypeReference",
+          "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+          "arguments": [
+            {
+              "kind": "TypeReference",
+              "name": "com.amazon.alexa.schema.Thing"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

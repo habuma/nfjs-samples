@@ -1,0 +1,159 @@
+namespace com.ubertravel
+
+import com.amazon.alexa.ask.conversations.utterances
+
+import com.amazon.alexa.ask.conversations.*
+import com.amazon.alexa.schema.Nothing
+
+import prompts.request_destination_apla
+import prompts.request_startDate_apla
+import prompts.request_tripLength_apla
+import prompts.scheduleTrip_apla
+import prompts.confirmTrip_apla
+
+import com.amazon.ask.types.builtins.AMAZON.DATE
+import com.amazon.ask.types.builtins.AMAZON.NUMBER
+import com.amazon.ask.types.builtins.AMAZON.City
+
+AffirmEvent = utterances([
+  "exactly",
+  "yeah I'd like that",
+  "you got it",
+  "yup",
+  "correct",
+  "that's right",
+  "yeah",
+  "yep",
+  "yes",
+  "make it so"
+])
+
+InformStartDateEvent = utterances<TripStartDate>([
+  "{startDate}",
+  "I want my trip to start {startDate}",
+  "I want to depart {startDate}",
+  "I want to leave on {startDate}"
+])
+
+InformTripLengthEvent = utterances<TripLength>([
+  "{tripLength}",
+  "{tripLength} days",
+  "I want my trip to last {tripLength} days",
+  "I want to return after {tripLength} days"
+])
+
+InformDestinationEvent = utterances<TripDestination>([
+  "{destination}",
+  "I want to go to {destination}",
+  "{destination} sounds nice",
+  "I want to visit {destination}"
+])
+
+ScheduleTripEvent = utterances<TripDetails>(
+  [
+    "plan a trip",
+    "schedule a trip to {destination}",
+    "book a trip to {destination}",
+    "i want to go to {destination}",
+    "schedule a trip to {destination} starting {startDate}",
+    "plan a trip to {destination} between {startDate} for {tripLength} days",
+    "schedule a trip to {destination} starting {startDate} for {tripLength} days"
+  ]
+)
+
+
+
+type TripDetails {
+  optional City destination
+  optional DATE startDate
+  optional NUMBER tripLength
+}
+
+type ScheduleTripResult {
+  City destination
+}
+
+
+type TripDestination {
+  City destination
+}
+
+type ResponsePayload {
+  ScheduleTripResult scheduleTripResult
+}
+
+type TripStartDate {
+  DATE startDate
+}
+
+type TripLength {
+  NUMBER tripLength
+}
+
+action ScheduleTripResult scheduleTrip(City destination, 
+  DATE startDate, NUMBER tripLength)
+
+// ------------------------------------------------------
+
+dialog Nothing ScheduleTripDialog {
+  sample {
+    scheduleTripRequest = expect(Invoke, ScheduleTripEvent)
+  
+    response(
+      response=request_destination_apla, 
+      act=Request{ arguments = [
+        scheduleTrip.arguments.destination]}
+    )
+    destination = expect(Inform, InformDestinationEvent)
+
+    response(
+      response=request_startDate_apla, 
+      act=Request{ arguments=[
+        scheduleTrip.arguments.startDate]}
+    )
+    startDate = expect(Inform, InformStartDateEvent)
+
+    response(
+      response=request_tripLength_apla, 
+      act=Request{ arguments=[
+        scheduleTrip.arguments.tripLength]}
+    )
+    tripLength = expect(Inform, InformTripLengthEvent)
+
+    /*
+    ensure(
+      RequestArguments { arguments = [
+        scheduleTrip.arguments.destination], 
+        response = request_destination_apla },
+      RequestArguments { arguments = [
+        scheduleTrip.arguments.startDate], 
+        response = request_startDate_apla },
+      RequestArguments { arguments = [
+        scheduleTrip.arguments.tripLength], 
+        response = request_tripLength_apla }
+    )
+    */
+
+    response(
+      confirmTrip_apla, 
+      ConfirmAction { actionName = scheduleTrip },
+      payload = TripDetails { destination = scheduleTripRequest.destination, 
+        startDate = scheduleTripRequest.startDate, 
+        tripLength = scheduleTripRequest.tripLength 
+      }
+    )
+    expect(Affirm, AffirmEvent)
+
+    scheduleTripResult = scheduleTrip(
+      scheduleTripRequest.destination, 
+      scheduleTripRequest.startDate, 
+      scheduleTripRequest.tripLength)
+
+      response(
+      scheduleTrip_apla, 
+      Notify { actionName = scheduleTrip }, 
+      payload = ResponsePayload 
+       { scheduleTripResult = scheduleTripResult }
+    )
+  }
+}

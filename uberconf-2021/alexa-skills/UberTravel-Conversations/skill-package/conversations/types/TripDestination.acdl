@@ -1,0 +1,7 @@
+namespace com.ubertravel.types
+
+import com.amazon.ask.types.builtins.AMAZON.City
+
+type TripDestination {
+  City destination
+}

@@ -1,0 +1,23 @@
+This Alexa skill project was originally created as an Alexa-hosted skill.
+That means, among other things, that deployment involves doing a Git
+commit/push to an Amazon-hosted Git repository.
+
+Although I have access and rights to push this code to deployment, you
+will not. Therefore, I've removed the Git details from the project. If
+you want to deploy this code for yourself, perhaps the best way is to
+create your own Alexa-hosted skill (using `ask new`) and then copy the
+`lambda/` and `skill-package/` folders from this project over the ones
+in the Alexa-hosted skill that you created. And then, deploy your skill
+using `git commit` and `git push`.
+
+Also, as I mentioned during the session, the conversations code contained
+in this project has some duplications. At one time, I was using `import`
+to break my project into multiple modules and then importing various
+components as needed. But then recently that stopped worked for unknown
+reasons. So, I copied all of the ACDL content into a single ACDL file
+at `skill-package/conversations/ScheduleTripDialog.acdl` to avoid the
+import issue. I left the original ACDL in place, though.
+
+Note that I have recently been given some tips on how to make the import
+work again. Once I have had a chance to try it out, and if I can get it
+to work, I'll adjust this project to remove the duplication.

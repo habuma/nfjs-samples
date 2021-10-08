@@ -1,0 +1,19 @@
+namespace com.ubertravel.events
+
+import com.amazon.alexa.ask.conversations.*
+import com.ubertravel.types.TripStartDate
+import com.ubertravel.types.TripLength
+
+InformStartDateEvent = utterances<TripStartDate>([
+  "{startDate}",
+  "I want my trip to start {startDate}",
+  "I want to depart {startDate}",
+  "I want to leave on {startDate}"
+])
+
+InformTripLengthEvent = utterances<TripLength>([
+  "{tripLength}",
+  "{tripLength} days",
+  "I want my trip to last {tripLength} days",
+  "I want to return after {tripLength} days"
+])

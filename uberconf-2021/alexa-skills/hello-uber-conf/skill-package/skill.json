@@ -1,0 +1,35 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:548637245237:function:7e15069c-56bd-42b1-830d-b66df357bf4b:Release_0"
+        },
+        "regions": {
+          "EU": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:eu-west-1:548637245237:function:7e15069c-56bd-42b1-830d-b66df357bf4b:Release_0"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-east-1:548637245237:function:7e15069c-56bd-42b1-830d-b66df357bf4b:Release_0"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "arn:aws:lambda:us-west-2:548637245237:function:7e15069c-56bd-42b1-830d-b66df357bf4b:Release_0"
+            }
+          }
+        }
+      }
+    },
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "hello uber conf"
+        }
+      }
+    }
+  }
+}

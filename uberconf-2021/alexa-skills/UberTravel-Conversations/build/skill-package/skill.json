@@ -1,0 +1,40 @@
+{
+  "manifest": {
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "summary": "Sample Short Description",
+          "examplePhrases": [
+            "Alexa open hello world",
+            "hello",
+            "help"
+          ],
+          "name": "UberTravel-Conversations",
+          "description": "Sample Full Description"
+        }
+      },
+      "isAvailableWorldwide": true,
+      "testingInstructions": "Sample Testing Instructions.",
+      "category": "KNOWLEDGE_AND_TRIVIA",
+      "distributionCountries": []
+    },
+    "apis": {
+      "custom": {
+        "dialogManagement": {
+          "sessionStartDelegationStrategy": {
+            "target": "AMAZON.Conversations"
+          },
+          "dialogManagers": [
+            {
+              "type": "AMAZON.Conversations"
+            }
+          ]
+        },
+        "endpoint": {
+          "uri": "arn:aws:lambda:us-east-1:494442948374:function:ask-ubertravel-conversatio-default-default-1633297817441"
+        }
+      }
+    },
+    "manifestVersion": "1.0"
+  }
+}

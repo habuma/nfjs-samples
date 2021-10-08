@@ -1,0 +1,9 @@
+namespace com.ubertravel.actions
+
+import com.ubertravel.types.ScheduleTripResult
+import com.amazon.ask.types.builtins.AMAZON.DATE
+import com.amazon.ask.types.builtins.AMAZON.NUMBER
+import com.amazon.ask.types.builtins.AMAZON.City
+
+action ScheduleTripResult scheduleTrip(City destination, 
+    DATE startDate, NUMBER tripLength)

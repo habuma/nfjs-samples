@@ -1,0 +1,16 @@
+namespace com.ubertravel.events
+
+import com.amazon.alexa.ask.conversations.utterances
+
+AffirmEvent = utterances([
+  "exactly",
+  "yeah I'd like that",
+  "you got it",
+  "yup",
+  "correct",
+  "that's right",
+  "yeah",
+  "yep",
+  "yes",
+  "make it so"
+])

@@ -1,0 +1,197 @@
+{
+  "schema": "https://amazonalexa.com/ask/2020/12/Module",
+  "exports": [
+    "com.ubertravel.events.InformStartDateEvent",
+    "com.ubertravel.events.InformTripLengthEvent"
+  ],
+  "expressions": [
+    {
+      "kind": "QualifiedNameDeclaration",
+      "name": "com.ubertravel.events.InformStartDateEvent",
+      "type": {
+        "kind": "TypeReference",
+        "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+        "arguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.ubertravel.types.TripStartDate"
+          }
+        ]
+      },
+      "expression": {
+        "kind": "Call",
+        "name": "com.amazon.alexa.ask.conversations.utterances",
+        "genericArguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.ubertravel.types.TripStartDate"
+          }
+        ],
+        "arguments": {
+          "samples": {
+            "kind": "Call",
+            "name": "com.amazon.alexa.schema.List",
+            "genericArguments": [
+              {
+                "kind": "TypeReference",
+                "name": "com.amazon.alexa.schema.String"
+              }
+            ],
+            "arguments": [
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "{startDate}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "I want my trip to start {startDate}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "I want to depart {startDate}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "I want to leave on {startDate}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              }
+            ],
+            "type": {
+              "kind": "TypeReference",
+              "name": "com.amazon.alexa.schema.List",
+              "arguments": [
+                {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              ]
+            }
+          }
+        },
+        "type": {
+          "kind": "TypeReference",
+          "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+          "arguments": [
+            {
+              "kind": "TypeReference",
+              "name": "com.ubertravel.types.TripStartDate"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "kind": "QualifiedNameDeclaration",
+      "name": "com.ubertravel.events.InformTripLengthEvent",
+      "type": {
+        "kind": "TypeReference",
+        "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+        "arguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.ubertravel.types.TripLength"
+          }
+        ]
+      },
+      "expression": {
+        "kind": "Call",
+        "name": "com.amazon.alexa.ask.conversations.utterances",
+        "genericArguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.ubertravel.types.TripLength"
+          }
+        ],
+        "arguments": {
+          "samples": {
+            "kind": "Call",
+            "name": "com.amazon.alexa.schema.List",
+            "genericArguments": [
+              {
+                "kind": "TypeReference",
+                "name": "com.amazon.alexa.schema.String"
+              }
+            ],
+            "arguments": [
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "{tripLength}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "{tripLength} days",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "I want my trip to last {tripLength} days",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "I want to return after {tripLength} days",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              }
+            ],
+            "type": {
+              "kind": "TypeReference",
+              "name": "com.amazon.alexa.schema.List",
+              "arguments": [
+                {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              ]
+            }
+          }
+        },
+        "type": {
+          "kind": "TypeReference",
+          "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+          "arguments": [
+            {
+              "kind": "TypeReference",
+              "name": "com.ubertravel.types.TripLength"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

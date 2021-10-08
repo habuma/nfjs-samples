@@ -1,0 +1,61 @@
+{
+  "interactionModel": {
+      "languageModel": {
+          "invocationName": "uber travel",
+          "intents": [
+              {
+                  "name": "AMAZON.CancelIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": []
+              },
+              {
+                  "name": "HelloWorldIntent",
+                  "slots": [],
+                  "samples": [
+                      "hello",
+                      "how are you",
+                      "say hi world",
+                      "say hi",
+                      "hi",
+                      "say hello world",
+                      "say hello"
+                  ]
+              },
+              {
+                  "name": "ScheduleTripIntent",
+                  "slots": [
+                      {
+                          "name": "destination",
+                          "type": "AMAZON.City"
+                      },
+                      {
+                          "name": "startDate",
+                          "type": "AMAZON.DATE"
+                      },
+                      {
+                          "name": "tripLength",
+                          "type": "AMAZON.NUMBER"
+                      }
+                  ],
+                  "samples": [
+                      "I want to take a trip to {destination} starting on {startDate} for {tripLength} days",
+                      "schedule a trip to {destination} leaving {startDate} for {tripLength} days",
+                      "plan a trip to {destination} departing {startDate} lasting {tripLength} days"
+                  ]
+              },
+              {
+                  "name": "AMAZON.NavigateHomeIntent",
+                  "samples": []
+              }
+          ],
+          "types": []
+      }
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "schema": "https://amazonalexa.com/ask/2020/12/Module",
+  "exports": [
+    "com.ubertravel.events.InformDestinationEvent"
+  ],
+  "expressions": [
+    {
+      "kind": "QualifiedNameDeclaration",
+      "name": "com.ubertravel.events.InformDestinationEvent",
+      "type": {
+        "kind": "TypeReference",
+        "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+        "arguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.ubertravel.types.TripDestination"
+          }
+        ]
+      },
+      "expression": {
+        "kind": "Call",
+        "name": "com.amazon.alexa.ask.conversations.utterances",
+        "genericArguments": [
+          {
+            "kind": "TypeReference",
+            "name": "com.ubertravel.types.TripDestination"
+          }
+        ],
+        "arguments": {
+          "samples": {
+            "kind": "Call",
+            "name": "com.amazon.alexa.schema.List",
+            "genericArguments": [
+              {
+                "kind": "TypeReference",
+                "name": "com.amazon.alexa.schema.String"
+              }
+            ],
+            "arguments": [
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "{destination}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "I want to go to {destination}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "{destination} sounds nice",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              },
+              {
+                "kind": "Call",
+                "name": "com.amazon.alexa.schema.String",
+                "arguments": "I want to visit {destination}",
+                "type": {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              }
+            ],
+            "type": {
+              "kind": "TypeReference",
+              "name": "com.amazon.alexa.schema.List",
+              "arguments": [
+                {
+                  "kind": "TypeReference",
+                  "name": "com.amazon.alexa.schema.String"
+                }
+              ]
+            }
+          }
+        },
+        "type": {
+          "kind": "TypeReference",
+          "name": "com.amazon.alexa.ask.conversations.UtteranceEvent",
+          "arguments": [
+            {
+              "kind": "TypeReference",
+              "name": "com.ubertravel.types.TripDestination"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

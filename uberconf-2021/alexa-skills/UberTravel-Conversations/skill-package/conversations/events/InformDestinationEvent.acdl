@@ -1,0 +1,11 @@
+namespace com.ubertravel.events
+
+import com.amazon.alexa.ask.conversations.*
+import com.ubertravel.types.TripDestination
+
+InformDestinationEvent = utterances<TripDestination>([
+  "{destination}",
+  "I want to go to {destination}",
+  "{destination} sounds nice",
+  "I want to visit {destination}"
+])

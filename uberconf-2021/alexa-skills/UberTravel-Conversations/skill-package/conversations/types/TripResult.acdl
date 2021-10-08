@@ -1,0 +1,6 @@
+namespace com.ubertravel.types
+
+type ResponsePayload {
+  ScheduleTripResult scheduleTripResult
+}
+

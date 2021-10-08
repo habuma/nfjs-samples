@@ -1,0 +1,19 @@
+namespace com.ubertravel.events
+
+import com.amazon.alexa.ask.conversations.*
+import com.ubertravel.types.TripDetails
+
+ScheduleTripEvent = utterances<TripDetails>(
+  [
+    /*
+    "plan a trip",
+    "schedule a trip to {destination}",
+    "book a trip to {destination}",
+    "i want to go to {destination}",
+    "schedule a trip to {destination} starting {startDate}",
+    */
+
+    "plan a trip to {destination} between {startDate} for {tripLength} days",
+    "schedule a trip to {destination} starting {startDate} for {tripLength} days"
+  ]
+)

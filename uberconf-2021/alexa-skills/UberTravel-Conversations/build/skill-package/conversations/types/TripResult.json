@@ -1,0 +1,22 @@
+{
+  "schema": "https://amazonalexa.com/ask/2020/12/Module",
+  "exports": [
+    "com.ubertravel.types.ResponsePayload"
+  ],
+  "expressions": [
+    {
+      "kind": "TypeDeclaration",
+      "name": "com.ubertravel.types.ResponsePayload",
+      "properties": [
+        {
+          "name": "scheduleTripResult",
+          "type": {
+            "kind": "TypeReference",
+            "name": "com.ubertravel.types.ScheduleTripResult"
+          },
+          "optional": false
+        }
+      ]
+    }
+  ]
+}

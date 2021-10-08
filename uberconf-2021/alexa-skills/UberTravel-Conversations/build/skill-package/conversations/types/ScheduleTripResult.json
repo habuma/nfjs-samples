@@ -1,0 +1,22 @@
+{
+  "schema": "https://amazonalexa.com/ask/2020/12/Module",
+  "exports": [
+    "com.ubertravel.types.ScheduleTripResult"
+  ],
+  "expressions": [
+    {
+      "kind": "TypeDeclaration",
+      "name": "com.ubertravel.types.ScheduleTripResult",
+      "properties": [
+        {
+          "name": "destination",
+          "type": {
+            "kind": "TypeReference",
+            "name": "com.amazon.ask.types.builtins.AMAZON.City"
+          },
+          "optional": false
+        }
+      ]
+    }
+  ]
+}

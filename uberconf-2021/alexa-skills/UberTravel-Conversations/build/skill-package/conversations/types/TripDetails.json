@@ -1,0 +1,38 @@
+{
+  "schema": "https://amazonalexa.com/ask/2020/12/Module",
+  "exports": [
+    "com.ubertravel.types.TripDetails"
+  ],
+  "expressions": [
+    {
+      "kind": "TypeDeclaration",
+      "name": "com.ubertravel.types.TripDetails",
+      "properties": [
+        {
+          "name": "destination",
+          "type": {
+            "kind": "TypeReference",
+            "name": "com.amazon.ask.types.builtins.AMAZON.City"
+          },
+          "optional": true
+        },
+        {
+          "name": "startDate",
+          "type": {
+            "kind": "TypeReference",
+            "name": "com.amazon.ask.types.builtins.AMAZON.DATE"
+          },
+          "optional": true
+        },
+        {
+          "name": "tripLength",
+          "type": {
+            "kind": "TypeReference",
+            "name": "com.amazon.ask.types.builtins.AMAZON.NUMBER"
+          },
+          "optional": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "interactionModel": {
+      "languageModel": {
+          "invocationName": "uber travel",
+          "intents": [
+              {
+                  "name": "AMAZON.CancelIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.HelpIntent",
+                  "samples": []
+              },
+              {
+                  "name": "AMAZON.StopIntent",
+                  "samples": []
+              },
+              {
+                  "name": "HelloWorldIntent",
+                  "slots": [],
+                  "samples": [
+                      "hello",
+                      "how are you",
+                      "say hi world",
+                      "say hi",
+                      "hi",
+                      "say hello world",
+                      "say hello"
+                  ]
+              },
+              {
+                  "name": "ScheduleTripIntent",
+                  "slots": [
+                      {
+                          "name": "destination",
+                          "type": "AMAZON.City"
+                      },
+                      {
+                          "name": "startDate",
+                          "type": "AMAZON.DATE"
+                      },
+                      {
+                          "name": "tripLength",
+                          "type": "AMAZON.NUMBER"
+                      }
+                  ],
+                  "samples": [
+                      "I want to take a trip",
+                      "schedule a trip",
+                      "plan a trip",
+                      "I want to take a trip to {destination}",
+                      "schedule a trip to {destination}",
+                      "plan a trip to {destination}",
+                      "I want to visit {destination}",
+                      "plan a trip beginning on {startDate}",
+                      "schedule a trip for {tripLength} days"
+                  ]
+              },
+              {
+                  "name": "AMAZON.NavigateHomeIntent",
+                  "samples": []
+              }
+          ],
+          "types": []
+      },
+      "dialog": {
+          "intents": [
+              {
+                  "name": "ScheduleTripIntent",
+                  "confirmationRequired": true,
+                  "prompts": {
+                      "confirmation": "Intent.Confirmation.ScheduleTrip"
+                  },
+                  "slots": [
+                      {
+                          "name": "destination",
+                          "type": "AMAZON.City",
+                          "confirmationRequired": false,
+                          "elicitationRequired": true,
+                          "prompts": {
+                              "elicitation": "Slot.Elicitation.ScheduleTrip.Destination"
+                          }
+                      },
+                      {
+                          "name": "startDate",
+                          "type": "AMAZON.DATE",
+                          "confirmationRequired": false,
+                          "elicitationRequired": true,
+                          "prompts": {
+                              "elicitation": "Slot.Elicitation.ScheduleTrip.StartDate"
+                          }
+                      },
+                      {
+                          "name": "tripLength",
+                          "type": "AMAZON.NUMBER",
+                          "confirmationRequired": false,
+                          "elicitationRequired": true,
+                          "prompts": {
+                              "elicitation": "Slot.Elicitation.ScheduleTrip.TripLength"
+                          }
+                      }
+                  ]
+              }
+          ],
+          "delegationStrategy": "ALWAYS"
+      },
+      "prompts": [
+          {
+              "id": "Intent.Confirmation.ScheduleTrip",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "I've got you down for a trip to {destination.value} for {tripLength} days, leaving on {startDate}. Is that right?"
+                  }
+              ]
+          },
+          {
+              "id": "Slot.Elicitation.ScheduleTrip.Destination",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "Where do you want to go?"
+                  },
+                  {
+                      "type": "PlainText",
+                      "value": "Which will you be going?"
+                  }
+              ]
+          },
+          {
+              "id": "Slot.Elicitation.ScheduleTrip.StartDate",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "When will your trip begin?"
+                  },
+                  {
+                      "type": "PlainText",
+                      "value": "When do you want to depart?"
+                  }
+              ]
+          },
+          {
+              "id": "Slot.Elicitation.ScheduleTrip.TripLength",
+              "variations": [
+                  {
+                      "type": "PlainText",
+                      "value": "How many days long will the trip be?"
+                  },
+                  {
+                      "type": "PlainText",
+                      "value": "How many days will you be away?"
+                  }
+              ]
+          }
+      ]
+  }
+}

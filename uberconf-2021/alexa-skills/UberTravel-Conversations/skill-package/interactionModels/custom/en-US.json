@@ -1,0 +1,40 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "uber trips",
+            "intents": [
+                {
+                    "name": "ScheduleTripIntent",
+                    "samples": [
+                        "plan a trip",
+                        "schedule a trip",
+                        "i want to take a trip"
+                    ]
+                },
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                },
+                {
+                    "name": "PlaceHolderIntent",
+                    "samples": [
+                        "In case you would like to intent based skill."
+                    ]
+                }
+            ],
+            "types": []
+        }
+    }
+}

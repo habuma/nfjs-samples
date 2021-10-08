@@ -1,0 +1,8 @@
+
+spring:
+  cloud:
+    stream:
+      bindings:
+        scheduleItinerary-in-0:
+          destination: itineraries
+          group: starport75
