@@ -1,0 +1,25 @@
+greeting:
+  message: Hello world!!!!!
+  
+management:
+  endpoint:
+    health:
+      show-details: always
+  
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        exclude: heapdump
+  
+# Keep ugly stack trace out of 404 responses
+server:
+  error:
+    include-stacktrace: never
+  
+---
+spring:
+  profiles: development
+  
+greeting:
+  message: Hello development!
