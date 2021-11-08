@@ -7,3 +7,6 @@ Initially, here are the first few examples:
 
  - boot-workshop : The streeteats example created during the Spring Boot workshop.
  - spring-k8s : The simple Hello World example used to demonstrate Spring image builds.
+ - spring-testing : The sample code from the Extreme Spring Testing session.
+ - spring-data : The end-state code from the Spring Data session.
+ - event-driven-spring : No code here, but a reference to the same code from the August workshop.
