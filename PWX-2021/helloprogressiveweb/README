@@ -1,0 +1,16 @@
+This project includes the code created during the Introduction to
+Alexa Skills and Beyond the Basics sessions from PWX2021. However,
+due to the AWS outage which hindered much of the live coding during
+the Beyond the Basics talk, this project doesn't represent much of
+the material covered in that session. (It does include the BST tests,
+though.)
+
+This project was created as an Alexa-hosted skill which means, among
+other things, that Amazon setup its own CodeCommit Git repository. It
+also assigned a skill ID to it that, by the time you see this, will no
+longer be valid.
+
+Therefore, I've scrubbed all of the Git and skill ID details from this
+project. If you want to try it out, you'll need to create a new skill
+project for yourself and then copy the interaction model, index.js,
+and package.json over your newly created skill project.

@@ -1,0 +1,76 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "hello progressive web",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "slots": [],
+          "samples": [
+            "hello",
+            "how are you",
+            "say hi world",
+            "say hi",
+            "hi",
+            "say hello world",
+            "say hello"
+          ]
+        },
+        {
+          "name": "FavoriteColorIntent",
+          "slots": [
+            {
+              "name": "favColor",
+              "type": "AMAZON.Color"
+            }
+          ],
+          "samples": [
+            "my favorite color is {favColor}",
+            "i like {favColor}",
+            "{favColor} is my favorite color"
+          ]
+        },
+        {
+            "name": "ScheduleTripIntent",
+            "slots": [
+              {
+                "name": "destination",
+                "type": "AMAZON.US_CITY"
+              },
+              {
+                "name": "departureDate",
+                "type": "AMAZON.DATE"
+              },
+              {
+                "name": "returnDate",
+                "type": "AMAZON.DATE"
+              }
+            ],
+            "samples": [
+                "plan a trip to {destination} starting {departureDate} and returning {returnDate}",
+                "schedule a trip to {destination} between {departureDate} and {returnDate}",
+                "schedule a trip to {destination} from {departureDate} to {returnDate}"
+            ]
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        }
+      ],
+      "types": []
+    }
+  },
+  "version": "1"
+}

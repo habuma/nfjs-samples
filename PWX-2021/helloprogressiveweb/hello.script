@@ -1,0 +1,9 @@
+{
+  "skillId": "amzn1.ask.skill.6f075a11-ff5c-4714-ad98-d1995cedf542",
+  "locale": "en-US",
+  "type": "text",
+  "userInput": [
+    "open hello progressive web",
+    "hello"
+  ]
+}

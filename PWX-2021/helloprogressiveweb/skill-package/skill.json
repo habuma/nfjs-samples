@@ -1,0 +1,35 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "SCRUBBED - See README"
+        },
+        "regions": {
+          "EU": {
+            "endpoint": {
+              "uri": "SCRUBBED - See README"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "SCRUBBED - See README"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "SCRUBBED - See README"
+            }
+          }
+        }
+      }
+    },
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "hello progressive web"
+        }
+      }
+    }
+  }
+}

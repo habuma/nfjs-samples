@@ -1,0 +1,22 @@
+# This is the test file for your unit tests, feel free to copy and modify the template test
+# as many times as you want. In this same folder, you'll also find a testing.json
+# file. It contains global configurations for future test files you might create in the future.
+#
+# Find more info on https://read.bespoken.io/unit-testing/getting-started/
+---
+configuration:
+  description: My first unit test suite
+---
+- test : Launch and ask for help
+- LaunchRequest : "Welcome to Progressive Web Experience 2021. What do you want to do?"
+- AMAZON.HelpIntent : "You can say hello to me! How can I help?"
+---
+- test : Hello intent
+- HelloWorldIntent : "Hello Progressive Web Experience!"
+---
+- test : Hello intent 2
+- "say hello" : "Hello Progressive Web Experience!"
+---
+- test : Hello intent 3
+- "Hello":
+  - prompt: Hello Progressive Web Experience!
