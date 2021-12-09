@@ -1,0 +1,16 @@
+This is a Spring Boot project that provides a simple REST API that
+can be consumed by an Alexa skill (among other things). The code that
+was used to demonstrate this is commented out in index.js in the
+accompanying hello-front-end project.
+
+As demonstrated in the PWX session, there are two ways you can use
+this API:
+
+ - By deploying both the Alexa skill and this API somewhere in the
+   cloud so that the Alexa skill's fulfillment code can access the
+   API.
+ - By running both locally. For Alexa this means deploying the skill
+   once (to get the interaction model out there) and then running
+   `ask run --watch --debug`. For this Spring project, you can either
+   run it in the IDE or by running it with the Maven build with
+   `./mvnw spring-boot:run`.

@@ -1,0 +1,8 @@
+The code I demonstrated during the interactive fiction session at
+PWX 2021 was created using `alexa-sfb new` or via the SFB editor.
+You can easily recreate them yourself by installing the SFB CLI and/or
+editor.
+
+Nevertheless, I've included the two projects here for your review.
+Where necessary, I've scrubbed any Alexa skill ID details or other
+deployment details from the projects.
