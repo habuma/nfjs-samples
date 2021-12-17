@@ -1,5 +1,10 @@
-This is a placeholder directory for code written during the Event-Driven
-Spring Workshop, December 2021.
+This directory contains the code produced in the Event Driven Spring workshop
+given Dec 17, 2021.
 
-Code from the workshop will be here no more than 24 hours after the conclusion
-of the workshop.
+Note that I had a few small design hiccups early on and chose to use variations
+of Itinerary across the message-driven bean and Spring Integration examples.
+What I should have done was have two distinct types---TripBooking and Itinerary.
+I corrected this mistake in the Spring Cloud Stream example.
+
+In order to run these, you'll need a Rabbit broker running. See the slides PDF
+for the Docker command I used to run Rabbit.

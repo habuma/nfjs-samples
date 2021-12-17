@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    stream:
+      bindings:
+        processTrip-in-0:
+          destination: trips
+          group: starport75
+        processTrip-out-0:
+          destination: itineraries
+          group: starport75
+          
