@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: Hello
+
+greeting:
+  message: Hello World!
+
+---
+spring:
+  profiles: dallas
+
+greeting:
+  message: Howdy Dallas!
+  
+---
+spring:
+  profiles: stlouis
+
+greeting:
+  message: Hello St. Louis!
