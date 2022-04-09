@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: Hello
+
+  main:
+    banner-mode: LOG
+
+greeting:
+  message: Hello, world!
+
+---
+spring:
+  profiles: dfw
+  
+greeting:
+  message: Hello, Dallas!
+  
+---
+spring:
+  profiles: cmh
+  
+greeting:
+  message: Hello, Columbus!
+ 

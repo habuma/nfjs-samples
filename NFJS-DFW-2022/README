@@ -1,0 +1,12 @@
+This folder contains sample code written during Craig's Spring talks at the
+Lonestar Software Symposium Dallas in April 2022.
+
+What you'll find here is:
+
+ - best-boot : Miscellaneous stuff from the "Best Boot Forward" session.
+ - RSocket-Examples : The RSocket examples demonstrated during the Reactive APIs session.
+ - reactive-books : The Reactive Books example started during the Reactive APIs session and continued in the Reactive Persistence session.
+ - reactive-books-mongo : The MongoDB example created during the Reactive Persistence session.
+ - flux-error-handling : An example of using an Exception handler with a Spring WebFlux API. This was something attempted in the Reactive Persistence session, but abandoned because I couldn't get it to work. I started again in a separate project after the session and it works as I'd have expected.
+
+Enjoy
