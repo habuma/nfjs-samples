@@ -1,5 +1,0 @@
-{
-  "sfx": "<audio src='$SNIPPET_S3_RESOURCES_URI/audio/$1'/>",
-
-  "pic": "$SNIPPET_S3_RESOURCES_URI/images/$1"
-}

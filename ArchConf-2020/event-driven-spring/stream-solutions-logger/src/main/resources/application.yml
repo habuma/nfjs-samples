@@ -1,8 +1,0 @@
-spring:
-  cloud:
-    stream:
-      bindings:
-        logSolution-in-0:
-          destination: solutions
-          group: quadratic
- 

@@ -1,7 +1,0 @@
-This is the simple hello world skill that was created during my voice integration session at ArchConf 2020.
-
-Although this skill illustrates no integration specifics and, in fact, much of the integration code referenced in the session was in other skills created outside of the session, I'm placing this project here for your review...simple as it may be.
-
-For a more concrete example of integration, specifically an example following the "RESTed" integration pattern, take a look at the NFJS skill at https://github.com/nofluffjuststuff/nfjs-skill.
-
-For another more concrete example of integration, specifically an example of the "Linked" integration pattern, see the "Integrating User Data" in my book: https://pragprog.com/titles/cwalexa/build-talking-apps-for-alexa/.

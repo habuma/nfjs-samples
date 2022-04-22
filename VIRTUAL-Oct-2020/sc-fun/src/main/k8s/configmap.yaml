@@ -1,6 +1,0 @@
-kind: ConfigMap
-apiVersion: v1
-metadata:
-  name: hello-k8s
-data:
-  greeting.message: Hello Kubernetes!
