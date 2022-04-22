@@ -1,9 +1,0 @@
-{
-  "handler": "../lambda/custom/index.js",
-  "jest": {
-    "coveragePathIgnorePatterns": [
-      "<rootDir>/test/.*\\.js",
-      "<rootDir>/testflow.js"
-    ]
-  }
-}

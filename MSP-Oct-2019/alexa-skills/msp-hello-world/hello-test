@@ -1,9 +1,0 @@
-{
-  "skillId": "amzn1.ask.skill.f7e862e4-45b6-454d-8726-ba84b0aa5639",
-  "locale": "en-US",
-  "type": "text",
-  "userInput": [
-    "open hello minneapolis",
-    "hello"
-  ]
-}

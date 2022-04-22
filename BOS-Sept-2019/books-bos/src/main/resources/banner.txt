@@ -1,4 +1,0 @@
-
-
-=== SPRING BOOT BOSTON DEMO ===
-

@@ -1,5 +1,0 @@
-{"properties": [{
-  "name": "greeting.who",
-  "type": "java.lang.String",
-  "description": "The entity you wish to greet."
-}]}
