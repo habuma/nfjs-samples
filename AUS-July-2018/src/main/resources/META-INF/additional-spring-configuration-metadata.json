@@ -1,5 +1,0 @@
-{"properties": [{
-  "name": "greeting.message",
-  "type": "java.lang.String",
-  "description": "The greeting you wish to say."
-}]}
