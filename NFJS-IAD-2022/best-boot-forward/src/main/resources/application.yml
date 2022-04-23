@@ -1,0 +1,16 @@
+greeting:
+  message: Hello World!
+  
+---
+spring:
+  profiles: iad
+
+greeting:
+  message: Hello Reston!
+
+---
+spring:
+  profiles: cmh
+
+greeting:
+  message: Hello Columbus!
