@@ -1,7 +1,12 @@
 = Central Ohio Software Symposium 2022 Sample Code
 
-This folder is a placeholder for the example code from Craig Walls' sessions at
+This folder contains the example code created during Craig Walls' sessions at
 Central Ohio Software Symposium, April 29-May 1, 2022.
 
-Any code written during Craig's sessions will be placed here within 24 hours of
-the conclusion of the conference (but probably earlier than that).
+This includes:
+ - BestBoot/ - The code written during the "Putting Your Best Boot Forward"
+   session.
+ - reactive-spring/ - The code written during the 3 Reactive Spring sessions.
+ - GraphQL/ - The code written during the Spring GraphQL session.
+
+Let me know if you have any questions or if anything is missing.
