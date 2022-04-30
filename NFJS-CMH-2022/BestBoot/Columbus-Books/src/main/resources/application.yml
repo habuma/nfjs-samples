@@ -1,0 +1,22 @@
+greeting:
+  message: Hello World!
+
+---
+spring:
+  profiles: cmh
+  
+greeting:
+  message: Hello Columbus!
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*' 
+
+---
+spring:
+  profiles: dfw
+  
+greeting:
+  message: Hello Dallas!
