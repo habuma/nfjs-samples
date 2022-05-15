@@ -1,0 +1,24 @@
+In order for this example to work, you'll need a Mongo DB available at the
+default port (27017). The easiest way to do this is with Docker:
+
+ $ docker run -d -p 27017:27017 --name example-mongo mongo:latest
+
+Then, you'll need to install and use the Mongo shell to create a capped collection:
+
+ $ mongo
+ > db.createCollection("cappedDsmBooks", {capped:true,size:100000})
+
+After the capped collection has been created, you can start the app.
+
+Create a few books in the DB. Using HTTPie (https://httpie.io/):
+
+ $ http :8080/books isbn=1111122222 title="Spring in Action" author="Craig Walls"
+ $ http :8080/books isbn=2222233333 title="Build Talking Apps" author="Craig Walls"
+
+Then query the books by author using `curl`:
+
+ $ curl "localhost:8080/books?author=Craig+Walls" -H"Accept: application/stream+json"
+
+This should list the books the match and then block waiting for more. Create more
+that match using HTTPie as shown above to see the new books appear in the `curl`
+response.

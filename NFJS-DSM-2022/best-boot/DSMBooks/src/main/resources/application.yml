@@ -1,0 +1,16 @@
+greeting:
+  message: Hello World!
+
+---
+spring:
+  profiles: dsm
+  
+greeting:
+  message: Hello Des Moines!
+  
+---
+spring:
+  profiles: aus
+  
+greeting:
+  message: Howdy Austin!
