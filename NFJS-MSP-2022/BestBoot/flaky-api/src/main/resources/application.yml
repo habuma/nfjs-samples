@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: Hello
+greeting:
+  message: Hello World!
+
+---
+spring:
+  profiles: msp
+  
+greeting:
+  message: Hello Minneapolis! 
+  
+---
+spring:
+  profiles: ord
+  
+greeting:
+  message: Hello Chicago!
+ 
