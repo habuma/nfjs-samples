@@ -1,0 +1,23 @@
+greeting:
+  message: Hello World!
+
+---
+spring:
+  config:
+    activate:
+      on-profile:
+      - bos
+  
+greeting:
+  message: Hello Boston!
+  
+---
+spring:
+  config:
+    activate:
+      on-profile:
+      - aus
+  
+greeting:
+  message: Howdy Austin!
+  
