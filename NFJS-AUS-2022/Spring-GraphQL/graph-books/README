@@ -1,0 +1,13 @@
+I mentioned that it was possible to generate documentation for a GraphQL API, but
+didn't mention much on how.
+
+The quickest and easiest way to get static documentation for your GraphQL API is
+through GraphiQL. In this example, run the app, point your browser at
+http://localhost:8080/graphiql, then click the "Documentation Explorer" tab on the
+left side. You'll be presented with API documentation right there in the GraphiQL
+UI.
+
+There are other static documentation generators for GraphQL APIs. The list at
+https://nordicapis.com/graphql-documentation-generators-explorers-and-tools/ includes
+many such tools. I've not tried them all, but I have tinkered with GraphDoc a little.
+Give them a try and let me know which you like best.

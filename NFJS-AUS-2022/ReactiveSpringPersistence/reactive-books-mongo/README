@@ -1,0 +1,31 @@
+During the presentation at NFJS, I had trouble getting this to work. What
+should have happened is that I would be able to `curl` to the authors endpoint
+with an Accept header of "application/stream+json" and then add books for the
+given author in another terminal window and see those books show up in the
+stream. Sadly, it didn't work and we ran out of time before I could sort it out.
+
+The good news is that it works now. I am not sure what I was doing wrong,
+because I was able to make it work with no changes whatsoever to the code. Thus,
+I'm guessing that I was doing something wrong at the command line. Who knows?
+
+Anyway, to try this out...
+
+ - Start a MongoDB locally listening on port 27017. I am using Docker for this
+   and start it with `docker run -p 27017:27017 -d mongo:latest`
+ - Open the Mongo shell (`mongo`) and create a capped collection named "cappedBooks":
+   `db.createCollection("cappedBooks", {capped:true,size:100000})`
+ - Start the application
+ - Using `curl`, add a book to "prime the pump":
+   `curl localhost:8080/books -H"Content-type: application/json" -d'{"isbn":"1122334455", title="Knitting with Dog Hair", author="Kendall Crolius"}'`
+ - Fetch books by Kendall Crolius as a stream (the controller has a `produces` parameter that guarantees that it will be a stream):
+   `curl "localhost:8080/books/author?author=Kendall+Crolius"`
+ - You should get one book back and the request should block waiting for more.
+ - In another terminal window, add another book by Kendall Crolius:
+   `curl localhost:8080/books -H"Content-type: application/json" -d'{"isbn":"2233445566", title="Test Book", author="Kendall Crolius"}'`
+ - You should see the new book appear in the first window's stream.
+ 
+Optionally, if you prefer to do this with HTTPie (https://httpie.io/) instead of `curl`:
+ - Add a book: `http :8080/books isbn="1122334455" title="Knitting with Dog Hair" author="Kendall Crolius"`
+ - Stream a list of books: `http -S `:8080/books/author?author=Kendall+Crolius"`
+ - Add a 2nd book in another terminal: `http :8080/books isbn="2233445566" title="Test Book" author="Kendall Crolius"`
+ 
