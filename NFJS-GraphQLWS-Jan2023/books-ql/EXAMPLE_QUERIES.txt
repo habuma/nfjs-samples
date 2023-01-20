@@ -1,0 +1,43 @@
+Here are a few example queries to try:
+
+== Hello:
+
+{
+  hello {
+    message
+  }
+}
+
+== All books:
+
+{
+  allBooks {
+    isbn
+    title
+    author {
+      firstName
+      lastName
+    }
+  }
+}
+
+== Create a book:
+
+mutation {
+  createBook(
+    book: {
+      isbn: "3344556677", 
+      title: "Spring in Action", 
+      author: {firstName: "Craig", lastName: "Walls"}}
+  ) {
+    isbn
+  }
+}
+
+== Delete a book:
+
+mutation {
+  deleteBook(isbn: "1122334455") {
+    isbn
+  }
+}
