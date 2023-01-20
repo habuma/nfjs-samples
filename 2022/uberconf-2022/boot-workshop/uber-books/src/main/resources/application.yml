@@ -1,0 +1,27 @@
+uberconf:
+  where: Orlando
+  
+logging:
+  level:
+    org.springframework: WARN
+  
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+        
+  endpoint:
+    health:
+      show-details: always
+      
+info:
+  contact:
+    email: support@example.com
+    phone: 123-123-1234
+---
+spring:
+  profiles: production
+
+uberconf:
+  where: Anaheim
