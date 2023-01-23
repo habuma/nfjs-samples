@@ -1,8 +1,0 @@
-spring:
-  graphql:
-    graphiql:
-      enabled: true
-
-      
-  jpa:
-    show-sql: true
