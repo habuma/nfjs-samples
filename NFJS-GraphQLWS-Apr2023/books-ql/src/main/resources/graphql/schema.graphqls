@@ -1,0 +1,51 @@
+type Query {
+	hello: String!
+	helloTo(who:String!): String!
+	howdy: Greeting!
+	allBooks: [Book]
+	allAuthors: [Author]
+	byIsbn(isbn: String!): Book 
+}
+
+type Mutation {
+	delete(isbn: String!): Book
+	addBook(book: BookIn!): Book!
+	addAuthor(author: AuthorIn!): Author!
+	addAuthor2(firstName: String!, lastName: String!): Author!
+}
+
+input AuthorIn {
+	firstName: String!
+	lastName: String!
+}
+
+input BookIn {
+	isbn: String!
+	title: String!
+#	author: AuthorIn!
+	authorId: Int!
+}
+
+type Book {
+	isbn: String!
+	title: String!
+	author: Author!
+}
+
+type Author {
+	id: Int!
+	firstName: String!
+	lastName: String!
+}
+
+type Greeting {
+	message: String!
+	timestamp: Int!
+}
+
+
+
+
+
+
+
