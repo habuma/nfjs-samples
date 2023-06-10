@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: greeting-api
+  labels:
+    app: greeting-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: greeting-api
+  template:
+    metadata:
+      labels:
+        app: greeting-api
+    spec:
+      containers:
+      - name: greeting-api
+        image: habuma/greeting-api:0.0.1-SNAPSHOT

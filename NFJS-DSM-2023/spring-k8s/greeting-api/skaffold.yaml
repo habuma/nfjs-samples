@@ -1,0 +1,15 @@
+apiVersion: skaffold/v4beta3
+kind: Config
+metadata:
+  name: greeting-api
+build:
+  artifacts:
+    - image: habuma/greeting-api
+      buildpacks:
+        builder: dashaun/builder-arm:tiny
+        env:
+          - "BP_JVM_VERSION=17"
+        trustBuilder: true
+manifests:
+  rawYaml:
+    - target/classes/META-INF/dekorate/kubernetes.yml

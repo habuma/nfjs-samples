@@ -1,0 +1,22 @@
+greeting:
+  goodbye: See ya!
+  hello: Hello DevNexus
+management:
+  endpoint:
+    health:
+      show-details: always
+  endpoints:
+    web:
+      exposure:
+        include:
+        - env
+        - health
+        - info
+        - configprops
+
+#server:
+#  shutdown: graceful
+#spring:
+#  lifecycle:
+#    timeout-per-shutdown-phase: 1m
+

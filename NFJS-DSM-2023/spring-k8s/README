@@ -1,0 +1,11 @@
+After having some troubles with certificates during the session and because I didn't
+quite get to everything I wanted to cover, I decided to not push the code from the
+session and instead provide the example code from the same talk given at DevNexus 2023.
+
+The code is quite similar to what I was doing in the session in Des Moines, so it should
+align with what was presented.
+
+Meanwhile, the certificate issue remained, even with code that I know worked back in
+April. I've not yet confirmed this, but I believe that this has something to do with
+Skaffold, buildpacks, and Mac M1 hardware. Something outside of my code has changed
+and is causing problems. If you are not on Apple Silicon, you'll probably be fine.
