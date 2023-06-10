@@ -1,0 +1,22 @@
+type Query {
+	hello: String!
+	helloTo(who: String!): String!
+	
+	allBooks: [Book]
+	byIsbn(isbn: String!): Book
+}
+
+type Mutation {
+	deleteByIsbn(isbn: String!): Book
+}
+
+type Book {
+	isbn: String
+	title: String
+	author: Author!
+}
+
+type Author {
+	firstName: String
+	lastName: String
+}
