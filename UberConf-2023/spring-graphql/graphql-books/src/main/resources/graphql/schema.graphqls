@@ -1,0 +1,46 @@
+type Query {
+    hello: String!
+    allBooks: [Book]
+    allAuthors: [Author]
+    bookByIsbn(isbn: String!): Book
+}
+
+# This is a comment
+type Mutation {
+    addAuthor(author: AuthorInput!): Author
+    addBook(book: BookInput!): Book
+    deleteBookByIsbn(isbn: String!): Book
+}
+
+"""
+A book is an object that references a written work that's been published.
+"""
+type Book {
+    """
+    The book's unique identifier.
+
+    This identifier has been defined outside of our API by some
+    authority on books.
+    """
+    isbn: String!
+
+    "The title of the book"
+    title: String!
+    author: Author!
+}
+
+type Author {
+    firstName: String!
+    lastName: String!
+}
+
+input AuthorInput {
+    firstName: String!
+    lastName: String!
+}
+
+input BookInput {
+    isbn: String!
+    title: String!
+    author: AuthorInput!
+}
