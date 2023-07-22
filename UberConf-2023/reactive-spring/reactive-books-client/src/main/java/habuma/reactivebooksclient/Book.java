@@ -1,9 +1,6 @@
-package habuma.reactivebooks;
-
-import org.springframework.data.annotation.Id;
+package habuma.reactivebooksclient;
 
 public record Book(
-        @Id
         Long id,
         String isbn,
         String title,
