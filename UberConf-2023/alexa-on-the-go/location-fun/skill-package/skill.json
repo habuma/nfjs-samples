@@ -1,0 +1,40 @@
+{
+  "manifest": {
+    "apis": {
+      "custom": {
+        "endpoint": {
+          "uri": "<<Your skill's endpoint URI here>>"
+        },
+        "regions": {
+          "EU": {
+            "endpoint": {
+              "uri": "<<Your skill's endpoint URI here>>"
+            }
+          },
+          "NA": {
+            "endpoint": {
+              "uri": "<<Your skill's endpoint URI here>>"
+            }
+          },
+          "FE": {
+            "endpoint": {
+              "uri": "<<Your skill's endpoint URI here>>"
+            }
+          }
+        }
+      }
+    },
+    "permissions": [
+        {
+          "name": "alexa::devices:all:geolocation:read"
+        }
+    ],
+    "publishingInformation": {
+      "locales": {
+        "en-US": {
+          "name": "location-fun"
+        }
+      }
+    }
+  }
+}
