@@ -1,0 +1,6 @@
+{
+    allBooks {
+        isbn
+        title
+    }
+}

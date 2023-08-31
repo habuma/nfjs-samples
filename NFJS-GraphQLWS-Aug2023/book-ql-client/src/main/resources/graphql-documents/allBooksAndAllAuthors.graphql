@@ -1,0 +1,10 @@
+{
+    allBooks {
+        isbn
+        title
+    }
+    allAuthors {
+        firstName
+        lastName
+    }
+}

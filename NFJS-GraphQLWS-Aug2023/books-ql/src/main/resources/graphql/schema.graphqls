@@ -1,0 +1,45 @@
+# Here are the queries
+type Query {
+    """
+    Says hello
+    """
+    hello: String!
+
+    """
+    Fetches all books
+    """
+    # NOTE: I added "withAuthor" to enable conditional in the fragment
+    #       (See README for how to use it)
+    allBooks(withAuthor: Boolean): [Book!]
+    allAuthors: [Author!]
+    byIsbn(isbn: String!): Book!
+}
+
+# Here are the mutations
+type Mutation {
+    """
+    Adds an author given the first name and last name as strings
+    """
+    addAuthor(firstName: String!, lastName: String!): Author!
+    addAuthor2(author: AuthorIn!): Author!
+    addBook(isbn: String!, title: String!, authorFirstName: String!, authorLastName: String!): Book!
+}
+
+# Here are the types
+type Book {
+    isbn: String!
+    title: String!
+    author: Author!
+}
+
+type Author {
+    firstName: String!
+    lastName: String!
+}
+
+# Here are the inputs
+input AuthorIn {
+    firstName: String!
+    lastName: String!
+}
+
