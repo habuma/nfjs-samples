@@ -1,0 +1,13 @@
+package habuma.graphbooksclient;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class GraphBooksClientApplicationTests {
+
+    @Test
+    void contextLoads() {
+    }
+
+}
