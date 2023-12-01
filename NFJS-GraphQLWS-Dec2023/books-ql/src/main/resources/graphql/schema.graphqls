@@ -1,0 +1,64 @@
+type Query {
+    """
+    A simple hello world query
+    """
+    hello: String!
+    """
+    Fetch all books
+    """
+    allBooks: [Book]
+
+    """
+    Fetch a book by its ISBN
+    """
+    byIsbn(isbn: String!): Book!
+
+    allAuthors: [Author]
+}
+
+type Mutation {
+    """
+    Create a new author
+    """
+    createAuthor(firstName: String!, lastName: String!): Author!
+
+    createAuthor2(author: AuthorIn): Author!
+}
+
+"""
+The Book type represents a published book in the real world. It has an ISBN, a title, and an author.
+"""
+type Book {
+    """
+    The ISBN of the book
+    """
+    isbn: String!
+    """
+    The title of the book
+    """
+    title: String!
+    """
+    The author of the book
+    """
+    author: Author!
+}
+
+"""
+The Author type represents an author of a book. It has a first name and a last name.
+"""
+type Author {
+    id: Int!
+    """
+    The first name of the author
+    """
+    firstName: String!
+    """
+    The last name of the author
+    """
+    lastName: String!
+}
+
+input AuthorIn {
+    firstName: String!
+    lastName: String!
+}
