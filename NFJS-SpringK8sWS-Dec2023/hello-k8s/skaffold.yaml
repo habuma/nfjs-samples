@@ -1,0 +1,15 @@
+apiVersion: skaffold/v4beta8
+kind: Config
+metadata:
+  name: hello-k-s
+build:
+  artifacts:
+    - image: habuma/hello-k8s
+      buildpacks:
+        builder: gcr.io/buildpacks/builder:v1
+#        builder: dashaun/builder-arm:tiny
+        env:
+          - "BP_JVM_VERSION=17"
+manifests:
+  rawYaml:
+    - target/classes/META-INF/dekorate/kubernetes.yml
