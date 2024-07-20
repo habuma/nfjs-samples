@@ -1,0 +1,63 @@
+type Query {
+  """
+  Say hello to the world
+  """
+  hello: String!
+  allBooks: [Book!]!
+  byIsbn(isbn: String!): Book!
+  booksByTitleLike(title: String!): [Book!]!
+
+  booksThatAreCheckedOut: [Book!]!
+}
+
+type Mutation {
+  """
+  Add a new book to the library
+  """
+  addBook(book: BookIn!): Book!
+
+  """
+  Delete a book from the library
+  """
+  deleteBook(isbn: String!): Book
+}
+
+input BookIn {
+    isbn: String!
+    title: String!
+    author: AuthorIn!
+}
+
+input AuthorIn {
+    firstName: String!
+    lastName: String!
+}
+
+type Book {
+  """
+  The book's unique identifier called an ISBN
+  """
+  isbn: String!
+  """
+  The title of the book
+  """
+  title: String!
+  """
+  The author of the book
+  """
+  author: Author!
+}
+
+"""
+Someone who wrote a book
+"""
+type Author {
+  """
+  The author's first name
+  """
+  firstName: String!
+  """
+  The author's last name
+  """
+  lastName: String!
+}
