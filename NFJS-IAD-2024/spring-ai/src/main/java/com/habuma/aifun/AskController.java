@@ -37,10 +37,8 @@ public class AskController {
     );
 
     String content = documents.stream()
-        .map(doc -> doc.getContent())
+        .map(Document::getContent)
         .collect(Collectors.joining("\n"));
-
-    System.err.println("content = " + content);
 
     return new Answer(chatClient.prompt()
         .user("Question: " + question.question())

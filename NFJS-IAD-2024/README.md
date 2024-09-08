@@ -11,20 +11,19 @@ promising to address, let me know and I'll try to get it in.
 
 The Spring AI Example
 ---
-Also note, that the Spring AI RAG example is (for some reason) still not
-working. I decided it best to get the code checked in rather than delay while
-figuring out why it isn't working. I have compared that project with another
-similar project that is known to work and cannot see the difference.
+I finally figured out what the problem was with the Spring AI RAG example. Put
+simply, the Docker Compose dependency was in build.gradle as a `developmentOnly`
+dependency, which means it wasn't available to start Chroma when the app is
+running. I have no idea how that happened (possibly some quirk with the Spring
+Boot Initializr). But I changed it to `runtimeOnly` and it works.
 
-The core of the problem is that (for some reason) the catalog/schema is not
-being initialized on startup. I debugged into the initialization logic in both
-the working and non-working example. In the working example, an exception is
-thrown when the catalog is not found and that exception is handled by returning
-null, which ultimately results in the collection being created. But in the
-non-working code, that exception is (for reasons still unclear) not being handled
-or possibly a different exception is being thrown.
+Along the way, I also tidied up the Docker Compose YAML, removed a syserr debug
+line, and did a few other small tweaks. Once it's running, you can ask about
+Carcassonne rules like this:
 
-I'll figure it out. But as I said, I want to check the code in for you to see.
-And, of course, if anyone else figures it out, that'd be great, too.
-
-In the meantime, there's a very similar example at https://github.com/habuma/spring-ai-examples/tree/main/spring-ai-rag-example that I confirmed works.
+```
+$ http :8080/ask question="How do you score monasteries?" -b
+{
+    "answer": "In the game of Carcassonne, monasteries are scored as follows:\n\n1. A monastery scores 9 points if it is completely surrounded by tiles, including the tile it is on.\n2. If it is not completely surrounded, it scores 1 point for each tile that is adjacent to it (including the tile it is on).\n\nTo summarize, ensure that you count all the surrounding tiles when calculating the score for the monastery."
+}
+```
