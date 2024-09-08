@@ -26,3 +26,5 @@ or possibly a different exception is being thrown.
 
 I'll figure it out. But as I said, I want to check the code in for you to see.
 And, of course, if anyone else figures it out, that'd be great, too.
+
+In the meantime, there's a very similar example at https://github.com/habuma/spring-ai-examples/tree/main/spring-ai-rag-example that I confirmed works.
