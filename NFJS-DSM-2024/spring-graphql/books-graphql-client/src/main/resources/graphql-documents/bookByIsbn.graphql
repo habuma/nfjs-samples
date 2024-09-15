@@ -1,0 +1,10 @@
+query BookByIsbn($isbn: String!) {
+    book(isbn: $isbn) {
+        isbn
+        title
+        author {
+            firstName
+            lastName
+        }
+    }
+}
