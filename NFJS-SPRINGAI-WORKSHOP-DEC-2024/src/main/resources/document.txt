@@ -1,0 +1,20 @@
+Spring AI Workshop
+Date: 2024-12-13
+Presenter: Craig Walls
+
+By now, you've no doubt noticed that Generative AI is making waves across many
+industries. In between all of the hype and doubt, there are several use cases
+for Generative AI in many software projects. Whether it be as simple as building
+a live chat to help your users or using AI to analyze data and provide
+recommendations, Generative AI is becoming a key piece of software architecture.
+
+So how can you implement Generative AI in your projects? Let me introduce you to
+Spring AI.
+
+For over two decades, the Spring Framework and its immense portfolio of projects
+has been making complex problems easy for Java developers. And now with the new
+Spring AI project, adding Generative AI to your Spring Boot projects couldn't be
+easier! Spring AI brings an AI client and templated prompting that handles all of
+the ceremony necessary to communicate with common AI APIs (such as OpenAI and Azure
+OpenAI). And with Spring Boot auto-configuration, you'll be able to get straight to
+the point of asking questions and getting answers your application needs.
