@@ -1,0 +1,33 @@
+services:
+  qdrant:
+    image: 'qdrant/qdrant:latest'
+    ports:
+      - '6334'
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: unless-stopped
+    ports:
+      - '3000:3000'
+    volumes:
+      - grafana-storage:/var/lib/grafana
+    networks:
+      - net
+
+  prometheus:
+    image: prom/prometheus
+    container_name: prometheus
+    volumes:
+      - "./prometheus-config.yml:/etc/prometheus/prometheus.yml"
+    networks:
+      - net
+    ports:
+      - 9090:9090
+
+networks:
+  net:
+    driver: bridge
+
+volumes:
+  grafana-storage: {}
