@@ -1,0 +1,25 @@
+server:
+  port: 9000
+spring:
+  security:
+    oauth2:
+      authorization-server:
+        client:
+          trips-client:
+            registration:
+              client-id: "tripsclient"
+              client-secret: "{noop}secret"
+              client-authentication-methods:
+                - "client_secret_basic"
+              authorization-grant-types:
+                - "authorization_code"
+                - "refresh_token"
+              redirect-uris:
+                - "http://127.0.0.1:8080/authorized"
+              scopes:
+                - "trips.read"
+                - "trips.write"
+            require-authorization-consent: true
+    user:
+      name: tony
+      password: password

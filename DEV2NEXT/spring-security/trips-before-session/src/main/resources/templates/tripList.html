@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Trips: Trip List</title>
+    </head>
+
+    <body>
+        <h1>Your Trips</h1>
+
+        <ul>
+            <li th:each="trip : ${trips}">
+                From <span th:text="${trip.origin}">Origin</span> to
+                <span th:text="${trip.destination}">Destination</span> -
+                <span th:text="${trip.departureDate()}">Start Date</span> to
+                <span th:text="${trip.returnDate}">End Date</span>
+            </li>
+        </ul>
+    </body>
+</html>
